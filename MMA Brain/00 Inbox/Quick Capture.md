@@ -30,39 +30,7 @@ to 00
 File Path
 Make New Line
 Quick Capture.md
-(Ill) MMA Voice Capture
-lil Quick Dictation to Clipboard
-Append
-Inbox
-Ů Clipboard
-to 00
-File Path
-Make New Line
-Quick Capture.md
-(Ill) MMA Voice Capture
-lil Quick Dictation to Clipboard
-Append
-Inbox
-Ů Clipboard
-to 00
-File Path
-Make New Line
-Quick Capture.md
-(Ill) MMA Voice Capture
-lil Quick Dictation to Clipboard
-Append
-Inbox
-Ů Clipboard
-to 00
-File Path
-Make New Line
-Quick Capture.md
-(Ill) MMA Voice Capture
-lil Quick Dictation to Clipboard
-Append
-Inbox
-Ů Clipboard
-to 00
-File Path
-Make New Line
-Quick Capture.md
+Something is up with this, and I'm unsure how to stop it. 
+Something is up with this, and I'm unsure how to stop it. 
+OK so from my Jiu Jitsu scenario or membership I want to think about
+All right OK I think this works so from my understanding if I talk about Jiu Jitsu on here or anything of the sort so I guess like with the De La Hiba let me think about it
