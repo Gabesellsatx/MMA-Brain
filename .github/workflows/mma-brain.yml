@@ -1,0 +1,81 @@
+name: MMA Brain — first-run review
+on:
+  workflow_dispatch:
+  # Temporary setup-branch test trigger; removed after validation.
+  push:
+    branches: [setup/mma-brain-first-run]
+    paths:
+      - .github/workflows/mma-brain.yml
+      - scripts/organize_mma.py
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: mma-brain-first-run
+  cancel-in-progress: false
+jobs:
+  organize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prepare first-run observation
+        run: python scripts/organize_mma.py
+      - name: Verify preservation, scope, limit, and repeat safety
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import subprocess
+          from pathlib import Path
+
+          inbox = 'MMA Brain/00 Inbox/Quick Capture.md'
+          allowed = {
+              'MMA Brain/02 Techniques/Open Guard.md',
+              'MMA Brain/06 Problems/Problem Tracker.md',
+              'MMA Brain/00 Inbox/Processing Ledger.json',
+          }
+          original = subprocess.check_output(['git', 'show', 'HEAD:' + inbox])
+          assert Path(inbox).read_bytes() == original, 'Original inbox changed'
+          changed = set(subprocess.check_output(['git', 'diff', '--name-only']).decode().splitlines())
+          changed.update(subprocess.check_output(['git', 'ls-files', '--others', '--exclude-standard']).decode().splitlines())
+          assert changed <= allowed, f'Unexpected modified files: {changed - allowed}'
+          ledger = json.loads(Path('MMA Brain/00 Inbox/Processing Ledger.json').read_text())
+          assert len(ledger['processed']) == 1, 'First run must propose exactly one observation (cap: 3)'
+          before = {p: Path(p).read_bytes() for p in allowed}
+          subprocess.run(['python', 'scripts/organize_mma.py'], check=True)
+          assert all(Path(p).read_bytes() == b for p, b in before.items()), 'Repeat added duplicate changes'
+          assert Path(inbox).read_bytes() == original, 'Repeat changed inbox'
+          print('PASS: one observation (cap: 3); only permitted files changed; repeat is unchanged.')
+          print('Quick Capture.md SHA-256:', hashlib.sha256(original).hexdigest())
+          PY
+      - name: Create draft pull request
+        id: proposal
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: ${{ github.ref_name }}
+          commit-message: 'docs(mma): propose first-run De La Riva capture'
+          branch: ai/mma-brain-first-run
+          delete-branch: false
+          draft: true
+          title: 'MMA Brain: review first-run De La Riva observation'
+          body: |
+            First-run proposal only. One observation processed (limit: 3).
+            Quick Capture.md remains byte-for-byte unchanged.
+            Please verify ambiguous stance-switching language and knee-pain details.
+            This proposal is based on the branch where the test ran.
+            No schedule is enabled, no original observations are deleted, and nothing is merged.
+          add-paths: |
+            MMA Brain/02 Techniques/Open Guard.md
+            MMA Brain/06 Problems/Problem Tracker.md
+            MMA Brain/00 Inbox/Processing Ledger.json
+      - name: Report draft
+        env:
+          PR_URL: ${{ steps.proposal.outputs.pull-request-url }}
+        run: |
+          echo "Draft pull request: $PR_URL"
