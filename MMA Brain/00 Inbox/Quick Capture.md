@@ -21,3 +21,30 @@ Today in jujitsu, I practiced the Delahiva, and I was struggling with being able
 5. Never overwrite hand-written observations without approval.
 
 Testing my Mma notes for the 21st time
+(Ill) MMA Voice Capture
+lil Quick Dictation to Clipboard
+Append
+Inbox
+Ů Clipboard
+to 00
+File Path
+Make New Line
+Quick Capture.md
+(Ill) MMA Voice Capture
+lil Quick Dictation to Clipboard
+Append
+Inbox
+Ů Clipboard
+to 00
+File Path
+Make New Line
+Quick Capture.md
+(Ill) MMA Voice Capture
+lil Quick Dictation to Clipboard
+Append
+Inbox
+Ů Clipboard
+to 00
+File Path
+Make New Line
+Quick Capture.md
