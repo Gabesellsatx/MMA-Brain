@@ -20,3 +20,5 @@ Today in jujitsu, I practiced the Delahiva, and I was struggling with being able
 4. Mark unverified details as unverified; do not invent video transcripts.
 5. Never overwrite hand-written observations without approval.
 
+
+Hey Siri I want you to add to my notes
