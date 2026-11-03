@@ -1,0 +1,492 @@
+{
+  "nodes": [
+    {
+      "id": "fa2efb56bedf48ac",
+      "type": "text",
+      "x": 1050,
+      "y": 0,
+      "width": 360,
+      "height": 110,
+      "text": "# Boxing\nFundamentals → practice → application",
+      "color": "5"
+    },
+    {
+      "id": "af4f76c9433d4d01",
+      "type": "text",
+      "x": 0,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Fundamentals",
+      "color": "5"
+    },
+    {
+      "id": "42b382ff5b7a4ad4",
+      "type": "file",
+      "x": 0,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Stance & Guard (Boxing).md",
+      "color": "5"
+    },
+    {
+      "id": "6cde4b0070904b46",
+      "type": "file",
+      "x": 0,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Footwork.md",
+      "color": "5"
+    },
+    {
+      "id": "d728d2bc914b4d74",
+      "type": "file",
+      "x": 0,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Distance & Timing.md",
+      "color": "5"
+    },
+    {
+      "id": "c266810c13ee4890",
+      "type": "file",
+      "x": 0,
+      "y": 686,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Head Movement.md",
+      "color": "5"
+    },
+    {
+      "id": "a02c0c6553674708",
+      "type": "file",
+      "x": 0,
+      "y": 798,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Defense & Counters.md",
+      "color": "5"
+    },
+    {
+      "id": "0252000d23114a18",
+      "type": "text",
+      "x": 520,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Warm-Ups",
+      "color": "5"
+    },
+    {
+      "id": "e4e2f5592f8f4aa1",
+      "type": "file",
+      "x": 520,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Shadowboxing (Boxing).md",
+      "color": "5"
+    },
+    {
+      "id": "dc0eb397f1694ce0",
+      "type": "file",
+      "x": 520,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Slip Line.md",
+      "color": "5"
+    },
+    {
+      "id": "e7ca31d1afb04a3e",
+      "type": "file",
+      "x": 520,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Footwork Ladder.md",
+      "color": "5"
+    },
+    {
+      "id": "7a1d9c3806114ac1",
+      "type": "file",
+      "x": 520,
+      "y": 686,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Jab Rounds.md",
+      "color": "5"
+    },
+    {
+      "id": "82052beba8614415",
+      "type": "text",
+      "x": 1040,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Offense",
+      "color": "5"
+    },
+    {
+      "id": "04ae0525253c4f39",
+      "type": "file",
+      "x": 1040,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Jab (Boxing).md",
+      "color": "5"
+    },
+    {
+      "id": "538f841e947d4f14",
+      "type": "file",
+      "x": 1040,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Cross (Boxing).md",
+      "color": "5"
+    },
+    {
+      "id": "40b4647eb3094d8b",
+      "type": "file",
+      "x": 1040,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Hook.md",
+      "color": "5"
+    },
+    {
+      "id": "3450f08e143a41db",
+      "type": "file",
+      "x": 1040,
+      "y": 686,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Uppercut.md",
+      "color": "5"
+    },
+    {
+      "id": "ada3fdb2a6a2474f",
+      "type": "file",
+      "x": 1040,
+      "y": 798,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Feints.md",
+      "color": "5"
+    },
+    {
+      "id": "7d7701c04e444eb2",
+      "type": "file",
+      "x": 1040,
+      "y": 910,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Combinations.md",
+      "color": "5"
+    },
+    {
+      "id": "1cd564b25c1e44e7",
+      "type": "text",
+      "x": 1560,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Defense",
+      "color": "5"
+    },
+    {
+      "id": "03b375f2729f4883",
+      "type": "file",
+      "x": 1560,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Slip.md",
+      "color": "5"
+    },
+    {
+      "id": "ab168f6c52294292",
+      "type": "file",
+      "x": 1560,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Roll.md",
+      "color": "5"
+    },
+    {
+      "id": "863bd552dcc7473d",
+      "type": "file",
+      "x": 1560,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Parry.md",
+      "color": "5"
+    },
+    {
+      "id": "b76d2bb6a80c4480",
+      "type": "file",
+      "x": 1560,
+      "y": 686,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Block.md",
+      "color": "5"
+    },
+    {
+      "id": "c7b1acf0e40e4b57",
+      "type": "file",
+      "x": 1560,
+      "y": 798,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Pivot Exit.md",
+      "color": "5"
+    },
+    {
+      "id": "8d2023dc0d6c42c0",
+      "type": "text",
+      "x": 2080,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Applications",
+      "color": "5"
+    },
+    {
+      "id": "9b9dcd6bd5584722",
+      "type": "file",
+      "x": 2080,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Entries.md",
+      "color": "5"
+    },
+    {
+      "id": "735340796a5148ef",
+      "type": "file",
+      "x": 2080,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Angle Creation.md",
+      "color": "5"
+    },
+    {
+      "id": "69225388f8f14e79",
+      "type": "file",
+      "x": 2080,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Counterpunching.md",
+      "color": "5"
+    }
+  ],
+  "edges": [
+    {
+      "id": "a442e48fa2f94a63",
+      "fromNode": "fa2efb56bedf48ac",
+      "fromSide": "bottom",
+      "toNode": "af4f76c9433d4d01",
+      "toSide": "top"
+    },
+    {
+      "id": "d5c91aa572cd448d",
+      "fromNode": "af4f76c9433d4d01",
+      "fromSide": "bottom",
+      "toNode": "42b382ff5b7a4ad4",
+      "toSide": "top"
+    },
+    {
+      "id": "cdeac85242f04524",
+      "fromNode": "42b382ff5b7a4ad4",
+      "fromSide": "bottom",
+      "toNode": "6cde4b0070904b46",
+      "toSide": "top"
+    },
+    {
+      "id": "a0995a0379724ed4",
+      "fromNode": "6cde4b0070904b46",
+      "fromSide": "bottom",
+      "toNode": "d728d2bc914b4d74",
+      "toSide": "top"
+    },
+    {
+      "id": "5424b984317e438d",
+      "fromNode": "d728d2bc914b4d74",
+      "fromSide": "bottom",
+      "toNode": "c266810c13ee4890",
+      "toSide": "top"
+    },
+    {
+      "id": "ca97738a11444698",
+      "fromNode": "c266810c13ee4890",
+      "fromSide": "bottom",
+      "toNode": "a02c0c6553674708",
+      "toSide": "top"
+    },
+    {
+      "id": "7124f532c1f14697",
+      "fromNode": "fa2efb56bedf48ac",
+      "fromSide": "bottom",
+      "toNode": "0252000d23114a18",
+      "toSide": "top"
+    },
+    {
+      "id": "4ee3b465f45242be",
+      "fromNode": "0252000d23114a18",
+      "fromSide": "bottom",
+      "toNode": "e4e2f5592f8f4aa1",
+      "toSide": "top"
+    },
+    {
+      "id": "eb2d16a8d0e64bf8",
+      "fromNode": "e4e2f5592f8f4aa1",
+      "fromSide": "bottom",
+      "toNode": "dc0eb397f1694ce0",
+      "toSide": "top"
+    },
+    {
+      "id": "a0b2910771ca46e0",
+      "fromNode": "dc0eb397f1694ce0",
+      "fromSide": "bottom",
+      "toNode": "e7ca31d1afb04a3e",
+      "toSide": "top"
+    },
+    {
+      "id": "33cac38467d6481b",
+      "fromNode": "e7ca31d1afb04a3e",
+      "fromSide": "bottom",
+      "toNode": "7a1d9c3806114ac1",
+      "toSide": "top"
+    },
+    {
+      "id": "dc7fa31e7bd14e67",
+      "fromNode": "fa2efb56bedf48ac",
+      "fromSide": "bottom",
+      "toNode": "82052beba8614415",
+      "toSide": "top"
+    },
+    {
+      "id": "bca28c9f7c7c40ff",
+      "fromNode": "82052beba8614415",
+      "fromSide": "bottom",
+      "toNode": "04ae0525253c4f39",
+      "toSide": "top"
+    },
+    {
+      "id": "9b2b60b38aee4fdf",
+      "fromNode": "04ae0525253c4f39",
+      "fromSide": "bottom",
+      "toNode": "538f841e947d4f14",
+      "toSide": "top"
+    },
+    {
+      "id": "9b55a7ee4c954d99",
+      "fromNode": "538f841e947d4f14",
+      "fromSide": "bottom",
+      "toNode": "40b4647eb3094d8b",
+      "toSide": "top"
+    },
+    {
+      "id": "e805ca454a074365",
+      "fromNode": "40b4647eb3094d8b",
+      "fromSide": "bottom",
+      "toNode": "3450f08e143a41db",
+      "toSide": "top"
+    },
+    {
+      "id": "046d12150dce4e66",
+      "fromNode": "3450f08e143a41db",
+      "fromSide": "bottom",
+      "toNode": "ada3fdb2a6a2474f",
+      "toSide": "top"
+    },
+    {
+      "id": "20c2914924134ec5",
+      "fromNode": "ada3fdb2a6a2474f",
+      "fromSide": "bottom",
+      "toNode": "7d7701c04e444eb2",
+      "toSide": "top"
+    },
+    {
+      "id": "969693e92531423a",
+      "fromNode": "fa2efb56bedf48ac",
+      "fromSide": "bottom",
+      "toNode": "1cd564b25c1e44e7",
+      "toSide": "top"
+    },
+    {
+      "id": "7e13d13dce66494f",
+      "fromNode": "1cd564b25c1e44e7",
+      "fromSide": "bottom",
+      "toNode": "03b375f2729f4883",
+      "toSide": "top"
+    },
+    {
+      "id": "1372a2517f404a53",
+      "fromNode": "03b375f2729f4883",
+      "fromSide": "bottom",
+      "toNode": "ab168f6c52294292",
+      "toSide": "top"
+    },
+    {
+      "id": "c01128274dcf4287",
+      "fromNode": "ab168f6c52294292",
+      "fromSide": "bottom",
+      "toNode": "863bd552dcc7473d",
+      "toSide": "top"
+    },
+    {
+      "id": "d842b5384c984735",
+      "fromNode": "863bd552dcc7473d",
+      "fromSide": "bottom",
+      "toNode": "b76d2bb6a80c4480",
+      "toSide": "top"
+    },
+    {
+      "id": "cc8bf504b00d416d",
+      "fromNode": "b76d2bb6a80c4480",
+      "fromSide": "bottom",
+      "toNode": "c7b1acf0e40e4b57",
+      "toSide": "top"
+    },
+    {
+      "id": "69309743498e469c",
+      "fromNode": "fa2efb56bedf48ac",
+      "fromSide": "bottom",
+      "toNode": "8d2023dc0d6c42c0",
+      "toSide": "top"
+    },
+    {
+      "id": "771551ddcd5a4615",
+      "fromNode": "8d2023dc0d6c42c0",
+      "fromSide": "bottom",
+      "toNode": "9b9dcd6bd5584722",
+      "toSide": "top"
+    },
+    {
+      "id": "f53d3b034ce345e8",
+      "fromNode": "9b9dcd6bd5584722",
+      "fromSide": "bottom",
+      "toNode": "735340796a5148ef",
+      "toSide": "top"
+    },
+    {
+      "id": "5d8f261ccf604344",
+      "fromNode": "735340796a5148ef",
+      "fromSide": "bottom",
+      "toNode": "69225388f8f14e79",
+      "toSide": "top"
+    }
+  ]
+}

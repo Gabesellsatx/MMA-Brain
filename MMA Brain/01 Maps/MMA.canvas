@@ -1,0 +1,849 @@
+{
+  "nodes": [
+    {
+      "id": "61241772c7984b00",
+      "type": "text",
+      "x": 1500,
+      "y": 0,
+      "width": 420,
+      "height": 115,
+      "text": "# 🥋 MMA BRAIN\nStart here · Navigate discipline maps",
+      "color": "1"
+    },
+    {
+      "id": "8a0ca68ff479496f",
+      "type": "text",
+      "x": 580,
+      "y": 200,
+      "width": 280,
+      "height": 80,
+      "text": "## GRAPPLING",
+      "color": "4"
+    },
+    {
+      "id": "0046b98ed1414e7d",
+      "type": "text",
+      "x": 1650,
+      "y": 200,
+      "width": 280,
+      "height": 80,
+      "text": "## STRIKING",
+      "color": "3"
+    },
+    {
+      "id": "9204643c34c94ca8",
+      "type": "text",
+      "x": 2600,
+      "y": 200,
+      "width": 280,
+      "height": 80,
+      "text": "## SUPPORT",
+      "color": "2"
+    },
+    {
+      "id": "71f9e7231d604704",
+      "type": "file",
+      "x": 100,
+      "y": 380,
+      "width": 300,
+      "height": 82,
+      "file": "01 Maps/BJJ.canvas",
+      "color": "4"
+    },
+    {
+      "id": "fad302fd9dcc4a2f",
+      "type": "text",
+      "x": 100,
+      "y": 520,
+      "width": 300,
+      "height": 65,
+      "text": "Fundamentals",
+      "color": "4"
+    },
+    {
+      "id": "b5fb0d3011d44875",
+      "type": "text",
+      "x": 100,
+      "y": 625,
+      "width": 300,
+      "height": 65,
+      "text": "Warm-Ups",
+      "color": "4"
+    },
+    {
+      "id": "03f744ca87e4471a",
+      "type": "text",
+      "x": 100,
+      "y": 730,
+      "width": 300,
+      "height": 65,
+      "text": "Positions",
+      "color": "4"
+    },
+    {
+      "id": "1e385b5999f74bca",
+      "type": "file",
+      "x": 470,
+      "y": 380,
+      "width": 300,
+      "height": 82,
+      "file": "01 Maps/Wrestling.canvas",
+      "color": "3"
+    },
+    {
+      "id": "90834e0e2e534179",
+      "type": "text",
+      "x": 470,
+      "y": 520,
+      "width": 300,
+      "height": 65,
+      "text": "Fundamentals",
+      "color": "3"
+    },
+    {
+      "id": "298853c0630545bb",
+      "type": "text",
+      "x": 470,
+      "y": 625,
+      "width": 300,
+      "height": 65,
+      "text": "Warm-Ups",
+      "color": "3"
+    },
+    {
+      "id": "22b134366d4647a3",
+      "type": "text",
+      "x": 470,
+      "y": 730,
+      "width": 300,
+      "height": 65,
+      "text": "Entries",
+      "color": "3"
+    },
+    {
+      "id": "5fc8cfa72eef4c2b",
+      "type": "file",
+      "x": 840,
+      "y": 380,
+      "width": 300,
+      "height": 82,
+      "file": "01 Maps/Judo.canvas",
+      "color": "2"
+    },
+    {
+      "id": "f57e307afd7945f3",
+      "type": "text",
+      "x": 840,
+      "y": 520,
+      "width": 300,
+      "height": 65,
+      "text": "Fundamentals",
+      "color": "2"
+    },
+    {
+      "id": "d10f4bf8f52c4ee3",
+      "type": "text",
+      "x": 840,
+      "y": 625,
+      "width": 300,
+      "height": 65,
+      "text": "Warm-Ups",
+      "color": "2"
+    },
+    {
+      "id": "30312763e5424f4b",
+      "type": "text",
+      "x": 840,
+      "y": 730,
+      "width": 300,
+      "height": 65,
+      "text": "Throws",
+      "color": "2"
+    },
+    {
+      "id": "9fe9dc65ea744b84",
+      "type": "file",
+      "x": 1370,
+      "y": 380,
+      "width": 300,
+      "height": 82,
+      "file": "01 Maps/Boxing.canvas",
+      "color": "5"
+    },
+    {
+      "id": "9c91550b95fd4039",
+      "type": "text",
+      "x": 1370,
+      "y": 520,
+      "width": 300,
+      "height": 65,
+      "text": "Fundamentals",
+      "color": "5"
+    },
+    {
+      "id": "974c476e245841ef",
+      "type": "text",
+      "x": 1370,
+      "y": 625,
+      "width": 300,
+      "height": 65,
+      "text": "Warm-Ups",
+      "color": "5"
+    },
+    {
+      "id": "72feeac6cbe741d7",
+      "type": "text",
+      "x": 1370,
+      "y": 730,
+      "width": 300,
+      "height": 65,
+      "text": "Offense",
+      "color": "5"
+    },
+    {
+      "id": "9443603335284011",
+      "type": "file",
+      "x": 1740,
+      "y": 380,
+      "width": 300,
+      "height": 82,
+      "file": "01 Maps/Muay Thai.canvas",
+      "color": "1"
+    },
+    {
+      "id": "69cdaebcf5e94518",
+      "type": "text",
+      "x": 1740,
+      "y": 520,
+      "width": 300,
+      "height": 65,
+      "text": "Fundamentals",
+      "color": "1"
+    },
+    {
+      "id": "eb6937a49e6d48f5",
+      "type": "text",
+      "x": 1740,
+      "y": 625,
+      "width": 300,
+      "height": 65,
+      "text": "Warm-Ups",
+      "color": "1"
+    },
+    {
+      "id": "df712d6f84394d61",
+      "type": "text",
+      "x": 1740,
+      "y": 730,
+      "width": 300,
+      "height": 65,
+      "text": "Strikes",
+      "color": "1"
+    },
+    {
+      "id": "45e0aaf2b1f540ad",
+      "type": "file",
+      "x": 2110,
+      "y": 380,
+      "width": 300,
+      "height": 82,
+      "file": "01 Maps/Kickboxing.canvas",
+      "color": "6"
+    },
+    {
+      "id": "1e22334d89324356",
+      "type": "text",
+      "x": 2110,
+      "y": 520,
+      "width": 300,
+      "height": 65,
+      "text": "Fundamentals",
+      "color": "6"
+    },
+    {
+      "id": "3cb541ec6124403c",
+      "type": "text",
+      "x": 2110,
+      "y": 625,
+      "width": 300,
+      "height": 65,
+      "text": "Warm-Ups",
+      "color": "6"
+    },
+    {
+      "id": "7fcf667be0904682",
+      "type": "text",
+      "x": 2110,
+      "y": 730,
+      "width": 300,
+      "height": 65,
+      "text": "Offense",
+      "color": "6"
+    },
+    {
+      "id": "c4a680f00036423d",
+      "type": "file",
+      "x": 2500,
+      "y": 380,
+      "width": 300,
+      "height": 82,
+      "file": "01 Maps/Physical Therapy.canvas",
+      "color": "2"
+    },
+    {
+      "id": "eb78bcce3d0b4f32",
+      "type": "text",
+      "x": 2500,
+      "y": 520,
+      "width": 300,
+      "height": 65,
+      "text": "Fundamentals",
+      "color": "2"
+    },
+    {
+      "id": "2165a7c240f54ba2",
+      "type": "text",
+      "x": 2500,
+      "y": 625,
+      "width": 300,
+      "height": 65,
+      "text": "Warm-Ups",
+      "color": "2"
+    },
+    {
+      "id": "297416182e754c7e",
+      "type": "text",
+      "x": 2500,
+      "y": 730,
+      "width": 300,
+      "height": 65,
+      "text": "Regions",
+      "color": "2"
+    },
+    {
+      "id": "607ea2d95a2f44ab",
+      "type": "file",
+      "x": 2870,
+      "y": 380,
+      "width": 300,
+      "height": 82,
+      "file": "01 Maps/Strength & Conditioning.canvas",
+      "color": "3"
+    },
+    {
+      "id": "2d32d17e5f0e4a02",
+      "type": "text",
+      "x": 2870,
+      "y": 520,
+      "width": 300,
+      "height": 65,
+      "text": "Fundamentals",
+      "color": "3"
+    },
+    {
+      "id": "999d64f3b3e24a34",
+      "type": "text",
+      "x": 2870,
+      "y": 625,
+      "width": 300,
+      "height": 65,
+      "text": "Training",
+      "color": "3"
+    },
+    {
+      "id": "e6a364f351a2490a",
+      "type": "text",
+      "x": 2870,
+      "y": 730,
+      "width": 300,
+      "height": 65,
+      "text": "Tracking",
+      "color": "3"
+    },
+    {
+      "id": "b1d0e29695a74b61",
+      "type": "file",
+      "x": 3240,
+      "y": 380,
+      "width": 300,
+      "height": 82,
+      "file": "01 Maps/Mobility.canvas",
+      "color": "4"
+    },
+    {
+      "id": "f9a17679510b4d57",
+      "type": "text",
+      "x": 3240,
+      "y": 520,
+      "width": 300,
+      "height": 65,
+      "text": "Fundamentals",
+      "color": "4"
+    },
+    {
+      "id": "74dc516674494668",
+      "type": "text",
+      "x": 3240,
+      "y": 625,
+      "width": 300,
+      "height": 65,
+      "text": "Regions",
+      "color": "4"
+    },
+    {
+      "id": "41ea6f0f8f9d41a6",
+      "type": "text",
+      "x": 3240,
+      "y": 730,
+      "width": 300,
+      "height": 65,
+      "text": "Routines",
+      "color": "4"
+    },
+    {
+      "id": "371807cd764643ef",
+      "type": "file",
+      "x": 1370,
+      "y": 670,
+      "width": 300,
+      "height": 82,
+      "file": "01 Maps/MMA Integration.canvas",
+      "color": "1"
+    },
+    {
+      "id": "c1c5a7d7194a45e8",
+      "type": "text",
+      "x": 1370,
+      "y": 810,
+      "width": 300,
+      "height": 65,
+      "text": "Fundamentals",
+      "color": "1"
+    },
+    {
+      "id": "fca937dff48949ce",
+      "type": "text",
+      "x": 1370,
+      "y": 915,
+      "width": 300,
+      "height": 65,
+      "text": "Standing",
+      "color": "1"
+    },
+    {
+      "id": "86a89c7742c24e4c",
+      "type": "text",
+      "x": 1370,
+      "y": 1020,
+      "width": 300,
+      "height": 65,
+      "text": "Ground",
+      "color": "1"
+    },
+    {
+      "id": "31e6095923944cfd",
+      "type": "file",
+      "x": 180,
+      "y": 1200,
+      "width": 350,
+      "height": 90,
+      "file": "00 Inbox/Quick Capture.md",
+      "color": "5"
+    },
+    {
+      "id": "ae146d0f5e7b4d50",
+      "type": "file",
+      "x": 700,
+      "y": 1200,
+      "width": 350,
+      "height": 90,
+      "file": "05 Practice/Practice Log.md",
+      "color": "5"
+    },
+    {
+      "id": "0ff45ebdddbc4557",
+      "type": "file",
+      "x": 1220,
+      "y": 1200,
+      "width": 350,
+      "height": 90,
+      "file": "08 Progress/Progress Dashboard.md",
+      "color": "5"
+    },
+    {
+      "id": "75d0f56e22434191",
+      "type": "file",
+      "x": 1740,
+      "y": 1200,
+      "width": 350,
+      "height": 90,
+      "file": "07 Sources/Source Library.md",
+      "color": "5"
+    },
+    {
+      "id": "fa1a8d0db8284508",
+      "type": "file",
+      "x": 2260,
+      "y": 1200,
+      "width": 350,
+      "height": 90,
+      "file": "03 Concepts/Concepts & Gems.md",
+      "color": "5"
+    },
+    {
+      "id": "a7935749d3914e30",
+      "type": "file",
+      "x": 2780,
+      "y": 1200,
+      "width": 350,
+      "height": 90,
+      "file": "06 Problems/Problem Tracker.md",
+      "color": "5"
+    }
+  ],
+  "edges": [
+    {
+      "id": "54687476b1514537",
+      "fromNode": "61241772c7984b00",
+      "fromSide": "bottom",
+      "toNode": "8a0ca68ff479496f",
+      "toSide": "top"
+    },
+    {
+      "id": "19b64cf4657b4e63",
+      "fromNode": "61241772c7984b00",
+      "fromSide": "bottom",
+      "toNode": "0046b98ed1414e7d",
+      "toSide": "top"
+    },
+    {
+      "id": "cc904a1056b743d5",
+      "fromNode": "61241772c7984b00",
+      "fromSide": "bottom",
+      "toNode": "9204643c34c94ca8",
+      "toSide": "top"
+    },
+    {
+      "id": "b446d05890cd4612",
+      "fromNode": "8a0ca68ff479496f",
+      "fromSide": "bottom",
+      "toNode": "71f9e7231d604704",
+      "toSide": "top"
+    },
+    {
+      "id": "ebe6395a0fc24713",
+      "fromNode": "71f9e7231d604704",
+      "fromSide": "bottom",
+      "toNode": "fad302fd9dcc4a2f",
+      "toSide": "top"
+    },
+    {
+      "id": "1ebfc777e6c2466d",
+      "fromNode": "71f9e7231d604704",
+      "fromSide": "bottom",
+      "toNode": "b5fb0d3011d44875",
+      "toSide": "top"
+    },
+    {
+      "id": "b0454559ab99436e",
+      "fromNode": "71f9e7231d604704",
+      "fromSide": "bottom",
+      "toNode": "03f744ca87e4471a",
+      "toSide": "top"
+    },
+    {
+      "id": "1f5c27c1b42640c7",
+      "fromNode": "8a0ca68ff479496f",
+      "fromSide": "bottom",
+      "toNode": "1e385b5999f74bca",
+      "toSide": "top"
+    },
+    {
+      "id": "dd5c17b275714d30",
+      "fromNode": "1e385b5999f74bca",
+      "fromSide": "bottom",
+      "toNode": "90834e0e2e534179",
+      "toSide": "top"
+    },
+    {
+      "id": "0b7fcc2bcb404f27",
+      "fromNode": "1e385b5999f74bca",
+      "fromSide": "bottom",
+      "toNode": "298853c0630545bb",
+      "toSide": "top"
+    },
+    {
+      "id": "60820e65f4b748f6",
+      "fromNode": "1e385b5999f74bca",
+      "fromSide": "bottom",
+      "toNode": "22b134366d4647a3",
+      "toSide": "top"
+    },
+    {
+      "id": "9d4469f311624cc8",
+      "fromNode": "8a0ca68ff479496f",
+      "fromSide": "bottom",
+      "toNode": "5fc8cfa72eef4c2b",
+      "toSide": "top"
+    },
+    {
+      "id": "5d14ba76bef04f26",
+      "fromNode": "5fc8cfa72eef4c2b",
+      "fromSide": "bottom",
+      "toNode": "f57e307afd7945f3",
+      "toSide": "top"
+    },
+    {
+      "id": "ebba12bdb9cc4d5f",
+      "fromNode": "5fc8cfa72eef4c2b",
+      "fromSide": "bottom",
+      "toNode": "d10f4bf8f52c4ee3",
+      "toSide": "top"
+    },
+    {
+      "id": "a57698a17c214647",
+      "fromNode": "5fc8cfa72eef4c2b",
+      "fromSide": "bottom",
+      "toNode": "30312763e5424f4b",
+      "toSide": "top"
+    },
+    {
+      "id": "4fe42fa87e8b4096",
+      "fromNode": "0046b98ed1414e7d",
+      "fromSide": "bottom",
+      "toNode": "9fe9dc65ea744b84",
+      "toSide": "top"
+    },
+    {
+      "id": "da9d635a33a24de1",
+      "fromNode": "9fe9dc65ea744b84",
+      "fromSide": "bottom",
+      "toNode": "9c91550b95fd4039",
+      "toSide": "top"
+    },
+    {
+      "id": "d6a1904a12ab45ae",
+      "fromNode": "9fe9dc65ea744b84",
+      "fromSide": "bottom",
+      "toNode": "974c476e245841ef",
+      "toSide": "top"
+    },
+    {
+      "id": "2045d8899d244652",
+      "fromNode": "9fe9dc65ea744b84",
+      "fromSide": "bottom",
+      "toNode": "72feeac6cbe741d7",
+      "toSide": "top"
+    },
+    {
+      "id": "286ce5e83640417e",
+      "fromNode": "0046b98ed1414e7d",
+      "fromSide": "bottom",
+      "toNode": "9443603335284011",
+      "toSide": "top"
+    },
+    {
+      "id": "cee727af00044c81",
+      "fromNode": "9443603335284011",
+      "fromSide": "bottom",
+      "toNode": "69cdaebcf5e94518",
+      "toSide": "top"
+    },
+    {
+      "id": "ff680dfc790f4ff1",
+      "fromNode": "9443603335284011",
+      "fromSide": "bottom",
+      "toNode": "eb6937a49e6d48f5",
+      "toSide": "top"
+    },
+    {
+      "id": "aee4977c13b14292",
+      "fromNode": "9443603335284011",
+      "fromSide": "bottom",
+      "toNode": "df712d6f84394d61",
+      "toSide": "top"
+    },
+    {
+      "id": "2bdf1503a1554da6",
+      "fromNode": "0046b98ed1414e7d",
+      "fromSide": "bottom",
+      "toNode": "45e0aaf2b1f540ad",
+      "toSide": "top"
+    },
+    {
+      "id": "bfdcb209ac56496d",
+      "fromNode": "45e0aaf2b1f540ad",
+      "fromSide": "bottom",
+      "toNode": "1e22334d89324356",
+      "toSide": "top"
+    },
+    {
+      "id": "43d43d15762641d7",
+      "fromNode": "45e0aaf2b1f540ad",
+      "fromSide": "bottom",
+      "toNode": "3cb541ec6124403c",
+      "toSide": "top"
+    },
+    {
+      "id": "d1d9dd326a144bdf",
+      "fromNode": "45e0aaf2b1f540ad",
+      "fromSide": "bottom",
+      "toNode": "7fcf667be0904682",
+      "toSide": "top"
+    },
+    {
+      "id": "6f8087f241fa45c0",
+      "fromNode": "9204643c34c94ca8",
+      "fromSide": "bottom",
+      "toNode": "c4a680f00036423d",
+      "toSide": "top"
+    },
+    {
+      "id": "0a4d99bfb3db40c1",
+      "fromNode": "c4a680f00036423d",
+      "fromSide": "bottom",
+      "toNode": "eb78bcce3d0b4f32",
+      "toSide": "top"
+    },
+    {
+      "id": "e8859f11369e4898",
+      "fromNode": "c4a680f00036423d",
+      "fromSide": "bottom",
+      "toNode": "2165a7c240f54ba2",
+      "toSide": "top"
+    },
+    {
+      "id": "1e876ab0237f4700",
+      "fromNode": "c4a680f00036423d",
+      "fromSide": "bottom",
+      "toNode": "297416182e754c7e",
+      "toSide": "top"
+    },
+    {
+      "id": "594edc00fb484334",
+      "fromNode": "9204643c34c94ca8",
+      "fromSide": "bottom",
+      "toNode": "607ea2d95a2f44ab",
+      "toSide": "top"
+    },
+    {
+      "id": "c610bb72556549ab",
+      "fromNode": "607ea2d95a2f44ab",
+      "fromSide": "bottom",
+      "toNode": "2d32d17e5f0e4a02",
+      "toSide": "top"
+    },
+    {
+      "id": "c0da224baea04384",
+      "fromNode": "607ea2d95a2f44ab",
+      "fromSide": "bottom",
+      "toNode": "999d64f3b3e24a34",
+      "toSide": "top"
+    },
+    {
+      "id": "da874f4a713d43b5",
+      "fromNode": "607ea2d95a2f44ab",
+      "fromSide": "bottom",
+      "toNode": "e6a364f351a2490a",
+      "toSide": "top"
+    },
+    {
+      "id": "4cbe0ccac092471b",
+      "fromNode": "9204643c34c94ca8",
+      "fromSide": "bottom",
+      "toNode": "b1d0e29695a74b61",
+      "toSide": "top"
+    },
+    {
+      "id": "7359606e2dbc4e03",
+      "fromNode": "b1d0e29695a74b61",
+      "fromSide": "bottom",
+      "toNode": "f9a17679510b4d57",
+      "toSide": "top"
+    },
+    {
+      "id": "257cab4f3c8945a3",
+      "fromNode": "b1d0e29695a74b61",
+      "fromSide": "bottom",
+      "toNode": "74dc516674494668",
+      "toSide": "top"
+    },
+    {
+      "id": "5a008e5b6de8419b",
+      "fromNode": "b1d0e29695a74b61",
+      "fromSide": "bottom",
+      "toNode": "41ea6f0f8f9d41a6",
+      "toSide": "top"
+    },
+    {
+      "id": "c0479e37c5ac4904",
+      "fromNode": "61241772c7984b00",
+      "fromSide": "bottom",
+      "toNode": "371807cd764643ef",
+      "toSide": "top"
+    },
+    {
+      "id": "63809711fd0c4e98",
+      "fromNode": "371807cd764643ef",
+      "fromSide": "bottom",
+      "toNode": "c1c5a7d7194a45e8",
+      "toSide": "top"
+    },
+    {
+      "id": "c8298ad7005e41b5",
+      "fromNode": "371807cd764643ef",
+      "fromSide": "bottom",
+      "toNode": "fca937dff48949ce",
+      "toSide": "top"
+    },
+    {
+      "id": "0fbdfa9ccdf5458d",
+      "fromNode": "371807cd764643ef",
+      "fromSide": "bottom",
+      "toNode": "86a89c7742c24e4c",
+      "toSide": "top"
+    },
+    {
+      "id": "5748abe5e5a04d35",
+      "fromNode": "61241772c7984b00",
+      "fromSide": "bottom",
+      "toNode": "31e6095923944cfd",
+      "toSide": "top"
+    },
+    {
+      "id": "de8a632c236041fe",
+      "fromNode": "61241772c7984b00",
+      "fromSide": "bottom",
+      "toNode": "ae146d0f5e7b4d50",
+      "toSide": "top"
+    },
+    {
+      "id": "15e919d88482429b",
+      "fromNode": "61241772c7984b00",
+      "fromSide": "bottom",
+      "toNode": "0ff45ebdddbc4557",
+      "toSide": "top"
+    },
+    {
+      "id": "4de41270d93d48ce",
+      "fromNode": "61241772c7984b00",
+      "fromSide": "bottom",
+      "toNode": "75d0f56e22434191",
+      "toSide": "top"
+    },
+    {
+      "id": "d2c17c09f3d04dde",
+      "fromNode": "61241772c7984b00",
+      "fromSide": "bottom",
+      "toNode": "fa1a8d0db8284508",
+      "toSide": "top"
+    },
+    {
+      "id": "54b0304dc97c47f3",
+      "fromNode": "61241772c7984b00",
+      "fromSide": "bottom",
+      "toNode": "a7935749d3914e30",
+      "toSide": "top"
+    }
+  ]
+}

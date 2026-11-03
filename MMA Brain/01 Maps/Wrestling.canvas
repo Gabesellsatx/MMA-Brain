@@ -1,0 +1,492 @@
+{
+  "nodes": [
+    {
+      "id": "e76d8b9d0c7643b5",
+      "type": "text",
+      "x": 1050,
+      "y": 0,
+      "width": 360,
+      "height": 110,
+      "text": "# Wrestling\nFundamentals → practice → application",
+      "color": "3"
+    },
+    {
+      "id": "0c26e5b3d78a4232",
+      "type": "text",
+      "x": 0,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Fundamentals",
+      "color": "3"
+    },
+    {
+      "id": "3ed8a92b7e934c99",
+      "type": "file",
+      "x": 0,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Stance & Motion.md",
+      "color": "3"
+    },
+    {
+      "id": "fe3bbcd3599a4e86",
+      "type": "file",
+      "x": 0,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Level Changes.md",
+      "color": "3"
+    },
+    {
+      "id": "4fef36e75c444857",
+      "type": "file",
+      "x": 0,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Head Position.md",
+      "color": "3"
+    },
+    {
+      "id": "ce943699748d46e8",
+      "type": "file",
+      "x": 0,
+      "y": 686,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Hand Fighting.md",
+      "color": "3"
+    },
+    {
+      "id": "af24bd38c57141ab",
+      "type": "file",
+      "x": 0,
+      "y": 798,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Inside Position.md",
+      "color": "3"
+    },
+    {
+      "id": "314fc6a313d540d7",
+      "type": "file",
+      "x": 0,
+      "y": 910,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Balance & Pressure.md",
+      "color": "3"
+    },
+    {
+      "id": "3972a28613c544aa",
+      "type": "text",
+      "x": 520,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Warm-Ups",
+      "color": "3"
+    },
+    {
+      "id": "abfc0bfd72934a65",
+      "type": "file",
+      "x": 520,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Penetration Steps.md",
+      "color": "3"
+    },
+    {
+      "id": "76dd907426454414",
+      "type": "file",
+      "x": 520,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Sprawl Reps.md",
+      "color": "3"
+    },
+    {
+      "id": "5e70d1dafa0b4b08",
+      "type": "file",
+      "x": 520,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Hip Heists.md",
+      "color": "3"
+    },
+    {
+      "id": "d26d5df596d64ab9",
+      "type": "file",
+      "x": 520,
+      "y": 686,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Stance Motion Rounds.md",
+      "color": "3"
+    },
+    {
+      "id": "b4c85346466246f0",
+      "type": "text",
+      "x": 1040,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Entries",
+      "color": "3"
+    },
+    {
+      "id": "b554a3c245244985",
+      "type": "file",
+      "x": 1040,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Single Leg.md",
+      "color": "3"
+    },
+    {
+      "id": "b3095b45187e4927",
+      "type": "file",
+      "x": 1040,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Double Leg.md",
+      "color": "3"
+    },
+    {
+      "id": "cc3a7137d31c4120",
+      "type": "file",
+      "x": 1040,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/High Crotch.md",
+      "color": "3"
+    },
+    {
+      "id": "ec8ec682f64d4fd1",
+      "type": "file",
+      "x": 1040,
+      "y": 686,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Snapdown.md",
+      "color": "3"
+    },
+    {
+      "id": "63a813577f63451b",
+      "type": "file",
+      "x": 1040,
+      "y": 798,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Body Lock.md",
+      "color": "3"
+    },
+    {
+      "id": "1106d76cfa424c2e",
+      "type": "text",
+      "x": 1560,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Finishes",
+      "color": "3"
+    },
+    {
+      "id": "4c5b8e642d5147dc",
+      "type": "file",
+      "x": 1560,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Run the Pipe.md",
+      "color": "3"
+    },
+    {
+      "id": "8cba68daaa2c4354",
+      "type": "file",
+      "x": 1560,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Double Leg Finish.md",
+      "color": "3"
+    },
+    {
+      "id": "dc70cd9b1a6946fe",
+      "type": "file",
+      "x": 1560,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Go Behind.md",
+      "color": "3"
+    },
+    {
+      "id": "3878410f394f48dc",
+      "type": "file",
+      "x": 1560,
+      "y": 686,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Mat Return.md",
+      "color": "3"
+    },
+    {
+      "id": "3b55ab7d72bb41c7",
+      "type": "text",
+      "x": 2080,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Defense",
+      "color": "3"
+    },
+    {
+      "id": "d6212c14024e4119",
+      "type": "file",
+      "x": 2080,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Sprawl.md",
+      "color": "3"
+    },
+    {
+      "id": "d25005d33cbe450e",
+      "type": "file",
+      "x": 2080,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Whizzer.md",
+      "color": "3"
+    },
+    {
+      "id": "276eb29cbcd74402",
+      "type": "file",
+      "x": 2080,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Front Headlock.md",
+      "color": "3"
+    },
+    {
+      "id": "af398d85b6404c1f",
+      "type": "file",
+      "x": 2080,
+      "y": 686,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Stand-Up Escape.md",
+      "color": "3"
+    }
+  ],
+  "edges": [
+    {
+      "id": "a307fd00165f4c6a",
+      "fromNode": "e76d8b9d0c7643b5",
+      "fromSide": "bottom",
+      "toNode": "0c26e5b3d78a4232",
+      "toSide": "top"
+    },
+    {
+      "id": "c6dcc88181f442fa",
+      "fromNode": "0c26e5b3d78a4232",
+      "fromSide": "bottom",
+      "toNode": "3ed8a92b7e934c99",
+      "toSide": "top"
+    },
+    {
+      "id": "4076e4c6d562490c",
+      "fromNode": "3ed8a92b7e934c99",
+      "fromSide": "bottom",
+      "toNode": "fe3bbcd3599a4e86",
+      "toSide": "top"
+    },
+    {
+      "id": "bfcc52ba05c54486",
+      "fromNode": "fe3bbcd3599a4e86",
+      "fromSide": "bottom",
+      "toNode": "4fef36e75c444857",
+      "toSide": "top"
+    },
+    {
+      "id": "e6c1e4a0e67144de",
+      "fromNode": "4fef36e75c444857",
+      "fromSide": "bottom",
+      "toNode": "ce943699748d46e8",
+      "toSide": "top"
+    },
+    {
+      "id": "10bc212a1f0c416a",
+      "fromNode": "ce943699748d46e8",
+      "fromSide": "bottom",
+      "toNode": "af24bd38c57141ab",
+      "toSide": "top"
+    },
+    {
+      "id": "767624f6f9fb421f",
+      "fromNode": "af24bd38c57141ab",
+      "fromSide": "bottom",
+      "toNode": "314fc6a313d540d7",
+      "toSide": "top"
+    },
+    {
+      "id": "91cdc968571a456d",
+      "fromNode": "e76d8b9d0c7643b5",
+      "fromSide": "bottom",
+      "toNode": "3972a28613c544aa",
+      "toSide": "top"
+    },
+    {
+      "id": "8079492616404092",
+      "fromNode": "3972a28613c544aa",
+      "fromSide": "bottom",
+      "toNode": "abfc0bfd72934a65",
+      "toSide": "top"
+    },
+    {
+      "id": "8b82c6a1bc7248ff",
+      "fromNode": "abfc0bfd72934a65",
+      "fromSide": "bottom",
+      "toNode": "76dd907426454414",
+      "toSide": "top"
+    },
+    {
+      "id": "53f9258deb734731",
+      "fromNode": "76dd907426454414",
+      "fromSide": "bottom",
+      "toNode": "5e70d1dafa0b4b08",
+      "toSide": "top"
+    },
+    {
+      "id": "67f21cc847064de6",
+      "fromNode": "5e70d1dafa0b4b08",
+      "fromSide": "bottom",
+      "toNode": "d26d5df596d64ab9",
+      "toSide": "top"
+    },
+    {
+      "id": "a4cf9a61b22e480e",
+      "fromNode": "e76d8b9d0c7643b5",
+      "fromSide": "bottom",
+      "toNode": "b4c85346466246f0",
+      "toSide": "top"
+    },
+    {
+      "id": "c58df6312c7f49ae",
+      "fromNode": "b4c85346466246f0",
+      "fromSide": "bottom",
+      "toNode": "b554a3c245244985",
+      "toSide": "top"
+    },
+    {
+      "id": "920a94b48e954a82",
+      "fromNode": "b554a3c245244985",
+      "fromSide": "bottom",
+      "toNode": "b3095b45187e4927",
+      "toSide": "top"
+    },
+    {
+      "id": "15201bb6c6714302",
+      "fromNode": "b3095b45187e4927",
+      "fromSide": "bottom",
+      "toNode": "cc3a7137d31c4120",
+      "toSide": "top"
+    },
+    {
+      "id": "ac01dd371e9147fa",
+      "fromNode": "cc3a7137d31c4120",
+      "fromSide": "bottom",
+      "toNode": "ec8ec682f64d4fd1",
+      "toSide": "top"
+    },
+    {
+      "id": "300797cf0c5b497c",
+      "fromNode": "ec8ec682f64d4fd1",
+      "fromSide": "bottom",
+      "toNode": "63a813577f63451b",
+      "toSide": "top"
+    },
+    {
+      "id": "e0abef28d3d74008",
+      "fromNode": "e76d8b9d0c7643b5",
+      "fromSide": "bottom",
+      "toNode": "1106d76cfa424c2e",
+      "toSide": "top"
+    },
+    {
+      "id": "d7a198b57a10463e",
+      "fromNode": "1106d76cfa424c2e",
+      "fromSide": "bottom",
+      "toNode": "4c5b8e642d5147dc",
+      "toSide": "top"
+    },
+    {
+      "id": "e121cfc8b07f460d",
+      "fromNode": "4c5b8e642d5147dc",
+      "fromSide": "bottom",
+      "toNode": "8cba68daaa2c4354",
+      "toSide": "top"
+    },
+    {
+      "id": "fc923bddf72748fb",
+      "fromNode": "8cba68daaa2c4354",
+      "fromSide": "bottom",
+      "toNode": "dc70cd9b1a6946fe",
+      "toSide": "top"
+    },
+    {
+      "id": "afda97c1448c4ff5",
+      "fromNode": "dc70cd9b1a6946fe",
+      "fromSide": "bottom",
+      "toNode": "3878410f394f48dc",
+      "toSide": "top"
+    },
+    {
+      "id": "c2e23ba572824d61",
+      "fromNode": "e76d8b9d0c7643b5",
+      "fromSide": "bottom",
+      "toNode": "3b55ab7d72bb41c7",
+      "toSide": "top"
+    },
+    {
+      "id": "22946d3637e64365",
+      "fromNode": "3b55ab7d72bb41c7",
+      "fromSide": "bottom",
+      "toNode": "d6212c14024e4119",
+      "toSide": "top"
+    },
+    {
+      "id": "568364d18e4e4841",
+      "fromNode": "d6212c14024e4119",
+      "fromSide": "bottom",
+      "toNode": "d25005d33cbe450e",
+      "toSide": "top"
+    },
+    {
+      "id": "bb381dea6ee54126",
+      "fromNode": "d25005d33cbe450e",
+      "fromSide": "bottom",
+      "toNode": "276eb29cbcd74402",
+      "toSide": "top"
+    },
+    {
+      "id": "b58ea056da3045b3",
+      "fromNode": "276eb29cbcd74402",
+      "fromSide": "bottom",
+      "toNode": "af398d85b6404c1f",
+      "toSide": "top"
+    }
+  ]
+}

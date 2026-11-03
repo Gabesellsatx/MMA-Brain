@@ -1,0 +1,43 @@
+{
+	"nodes":[
+		{"id":"0f7f9b0e12d64fc8","type":"text","x":1050,"y":0,"width":360,"height":110,"text":"# Kickboxing\nFundamentals → practice → application","color":"6"},
+		{"id":"9d06ba7947b742cd","type":"text","x":0,"y":210,"width":290,"height":75,"text":"## Fundamentals","color":"6"},
+		{"id":"e5ac4f05faa54964","type":"file","x":0,"y":350,"width":290,"height":68,"file":"10 Fundamentals/Stance Switching.md","color":"6"},
+		{"id":"ab2ab4bbaaa946b9","type":"file","x":0,"y":462,"width":290,"height":68,"file":"10 Fundamentals/Punch Kick Integration.md","color":"6"},
+		{"id":"f67d8ad0ba164f90","type":"file","x":0,"y":574,"width":290,"height":68,"file":"10 Fundamentals/Range Control.md","color":"6"},
+		{"id":"d5d1f47a4ad342a5","type":"file","x":0,"y":686,"width":290,"height":68,"file":"10 Fundamentals/Kick Defense.md","color":"6"},
+		{"id":"4f12601f7bf84a43","type":"text","x":520,"y":210,"width":290,"height":75,"text":"## Warm-Ups","color":"6"},
+		{"id":"eb8b79cb35034c4f","type":"file","x":520,"y":350,"width":290,"height":68,"file":"02 Techniques/Shadowboxing (Kickboxing).md","color":"6"},
+		{"id":"a62404d4310d4a67","type":"file","x":520,"y":462,"width":290,"height":68,"file":"02 Techniques/Kick Chamber Reps.md","color":"6"},
+		{"id":"dda621b48e154080","type":"file","x":520,"y":574,"width":290,"height":68,"file":"02 Techniques/Combination Rounds.md","color":"6"},
+		{"id":"c948bf90d6fc4d3c","type":"text","x":1040,"y":210,"width":290,"height":75,"text":"## Offense","color":"6"},
+		{"id":"04e9cd29ad6a4b9a","type":"file","x":1040,"y":350,"width":290,"height":68,"file":"02 Techniques/Low Kick.md","color":"6"},
+		{"id":"928fcd351f864dec","type":"file","x":1040,"y":462,"width":290,"height":68,"file":"02 Techniques/Body Kick.md","color":"6"},
+		{"id":"0c5fb3a187314832","type":"file","x":1040,"y":574,"width":290,"height":68,"file":"02 Techniques/Punch Kick Combination.md","color":"6"},
+		{"id":"79f9102ad822455d","type":"file","x":1040,"y":686,"width":290,"height":68,"file":"02 Techniques/Kick to Punch.md","color":"6"},
+		{"id":"39d305b55b7b4779","type":"text","x":1560,"y":210,"width":290,"height":75,"text":"## Defense","color":"6"},
+		{"id":"600f5378881f4d3e","type":"file","x":1560,"y":350,"width":290,"height":68,"file":"02 Techniques/Check & Return.md","color":"6"},
+		{"id":"5721fd5e28474379","type":"file","x":1560,"y":462,"width":290,"height":68,"file":"02 Techniques/Catch & Counter.md","color":"6"},
+		{"id":"dc79ab6c19d94b08","type":"file","x":1560,"y":574,"width":290,"height":68,"file":"02 Techniques/Angle Exit.md","color":"6"}
+	],
+	"edges":[
+		{"id":"39b489a3e0984492","fromNode":"0f7f9b0e12d64fc8","fromSide":"bottom","toNode":"9d06ba7947b742cd","toSide":"top"},
+		{"id":"42a6374eba70448f","fromNode":"9d06ba7947b742cd","fromSide":"bottom","toNode":"e5ac4f05faa54964","toSide":"top"},
+		{"id":"1d6aae79ced54c0d","fromNode":"e5ac4f05faa54964","fromSide":"bottom","toNode":"ab2ab4bbaaa946b9","toSide":"top"},
+		{"id":"cdfec8b5852b482f","fromNode":"ab2ab4bbaaa946b9","fromSide":"bottom","toNode":"f67d8ad0ba164f90","toSide":"top"},
+		{"id":"1147321400fb4cd9","fromNode":"f67d8ad0ba164f90","fromSide":"bottom","toNode":"d5d1f47a4ad342a5","toSide":"top"},
+		{"id":"331fe3d847cb4054","fromNode":"0f7f9b0e12d64fc8","fromSide":"bottom","toNode":"4f12601f7bf84a43","toSide":"top"},
+		{"id":"c7d9c8f6a1584306","fromNode":"4f12601f7bf84a43","fromSide":"bottom","toNode":"eb8b79cb35034c4f","toSide":"top"},
+		{"id":"d521f5e8364040b7","fromNode":"eb8b79cb35034c4f","fromSide":"bottom","toNode":"a62404d4310d4a67","toSide":"top"},
+		{"id":"c9e2da914d864f32","fromNode":"a62404d4310d4a67","fromSide":"bottom","toNode":"dda621b48e154080","toSide":"top"},
+		{"id":"4fcf4ef91fe542f2","fromNode":"0f7f9b0e12d64fc8","fromSide":"bottom","toNode":"c948bf90d6fc4d3c","toSide":"top"},
+		{"id":"17f4709a96d148fd","fromNode":"c948bf90d6fc4d3c","fromSide":"bottom","toNode":"04e9cd29ad6a4b9a","toSide":"top"},
+		{"id":"fa7cdd10a87a4795","fromNode":"04e9cd29ad6a4b9a","fromSide":"bottom","toNode":"928fcd351f864dec","toSide":"top"},
+		{"id":"35afd21b0ca84ad3","fromNode":"928fcd351f864dec","fromSide":"bottom","toNode":"0c5fb3a187314832","toSide":"top"},
+		{"id":"7b9c0f60f7204dc0","fromNode":"0c5fb3a187314832","fromSide":"bottom","toNode":"79f9102ad822455d","toSide":"top"},
+		{"id":"72f2a4481c01473d","fromNode":"0f7f9b0e12d64fc8","fromSide":"bottom","toNode":"39d305b55b7b4779","toSide":"top"},
+		{"id":"e78c62a106e84b38","fromNode":"39d305b55b7b4779","fromSide":"bottom","toNode":"600f5378881f4d3e","toSide":"top"},
+		{"id":"6574c75b3fc54efe","fromNode":"600f5378881f4d3e","fromSide":"bottom","toNode":"5721fd5e28474379","toSide":"top"},
+		{"id":"4512ecdc14f84e38","fromNode":"5721fd5e28474379","fromSide":"bottom","toNode":"dc79ab6c19d94b08","toSide":"top"}
+	]
+}

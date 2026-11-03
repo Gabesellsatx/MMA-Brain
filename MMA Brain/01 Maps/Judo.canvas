@@ -1,0 +1,475 @@
+{
+  "nodes": [
+    {
+      "id": "f000f952a030423e",
+      "type": "text",
+      "x": 1050,
+      "y": 0,
+      "width": 360,
+      "height": 110,
+      "text": "# Judo\nFundamentals → practice → application",
+      "color": "2"
+    },
+    {
+      "id": "30d8f0a871a34ae6",
+      "type": "text",
+      "x": 0,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Fundamentals",
+      "color": "2"
+    },
+    {
+      "id": "186f0a7d344f4a13",
+      "type": "file",
+      "x": 0,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Kuzushi.md",
+      "color": "2"
+    },
+    {
+      "id": "0e13684065c94a82",
+      "type": "file",
+      "x": 0,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Tsukuri.md",
+      "color": "2"
+    },
+    {
+      "id": "beb53231bb944c62",
+      "type": "file",
+      "x": 0,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Kake.md",
+      "color": "2"
+    },
+    {
+      "id": "565db30efd4e4bbe",
+      "type": "file",
+      "x": 0,
+      "y": 686,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Kumi Kata.md",
+      "color": "2"
+    },
+    {
+      "id": "0c7ca624fc014c6c",
+      "type": "file",
+      "x": 0,
+      "y": 798,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Ukemi.md",
+      "color": "2"
+    },
+    {
+      "id": "c4dccf41912246d0",
+      "type": "file",
+      "x": 0,
+      "y": 910,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Posture & Movement.md",
+      "color": "2"
+    },
+    {
+      "id": "a86d98f0ab7942ec",
+      "type": "text",
+      "x": 520,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Warm-Ups",
+      "color": "2"
+    },
+    {
+      "id": "c82560affc31493f",
+      "type": "file",
+      "x": 520,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Breakfall Practice.md",
+      "color": "2"
+    },
+    {
+      "id": "6a519f591f0b42b6",
+      "type": "file",
+      "x": 520,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Footwork Circles.md",
+      "color": "2"
+    },
+    {
+      "id": "619344dc96b6428e",
+      "type": "file",
+      "x": 520,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Grip Fighting Rounds.md",
+      "color": "2"
+    },
+    {
+      "id": "c84c775724594b13",
+      "type": "file",
+      "x": 520,
+      "y": 686,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Uchikomi.md",
+      "color": "2"
+    },
+    {
+      "id": "edc04839d6924232",
+      "type": "text",
+      "x": 1040,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Throws",
+      "color": "2"
+    },
+    {
+      "id": "261df875a630463e",
+      "type": "file",
+      "x": 1040,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Osoto Gari.md",
+      "color": "2"
+    },
+    {
+      "id": "11d5739f738e4bff",
+      "type": "file",
+      "x": 1040,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Ouchi Gari.md",
+      "color": "2"
+    },
+    {
+      "id": "c35cff952d504ac1",
+      "type": "file",
+      "x": 1040,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/De Ashi Barai.md",
+      "color": "2"
+    },
+    {
+      "id": "642a5aa19e6c45b3",
+      "type": "file",
+      "x": 1040,
+      "y": 686,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Seoi Nage.md",
+      "color": "2"
+    },
+    {
+      "id": "897a7a07a5424397",
+      "type": "file",
+      "x": 1040,
+      "y": 798,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Harai Goshi.md",
+      "color": "2"
+    },
+    {
+      "id": "7b44b3825b7b49cf",
+      "type": "file",
+      "x": 1040,
+      "y": 910,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Uchi Mata.md",
+      "color": "2"
+    },
+    {
+      "id": "da650136562348df",
+      "type": "text",
+      "x": 1560,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Transitions",
+      "color": "2"
+    },
+    {
+      "id": "c25972c387244c77",
+      "type": "file",
+      "x": 1560,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Throw to Pin.md",
+      "color": "2"
+    },
+    {
+      "id": "f3bbd5b94bb64309",
+      "type": "file",
+      "x": 1560,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Grip to Entry.md",
+      "color": "2"
+    },
+    {
+      "id": "eb9ea2e48594449c",
+      "type": "file",
+      "x": 1560,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Foot Sweep to Throw.md",
+      "color": "2"
+    },
+    {
+      "id": "78a4a4b0ab61459e",
+      "type": "text",
+      "x": 2080,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Defense",
+      "color": "2"
+    },
+    {
+      "id": "4f954e62d9244f9d",
+      "type": "file",
+      "x": 2080,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Grip Breaks.md",
+      "color": "2"
+    },
+    {
+      "id": "d4fde9b9ab8a41f8",
+      "type": "file",
+      "x": 2080,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Counterbalance.md",
+      "color": "2"
+    },
+    {
+      "id": "b55cb2c184694258",
+      "type": "file",
+      "x": 2080,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Safe Falling.md",
+      "color": "2"
+    }
+  ],
+  "edges": [
+    {
+      "id": "35c65deb1c8c4142",
+      "fromNode": "f000f952a030423e",
+      "fromSide": "bottom",
+      "toNode": "30d8f0a871a34ae6",
+      "toSide": "top"
+    },
+    {
+      "id": "d647cf35675f42b4",
+      "fromNode": "30d8f0a871a34ae6",
+      "fromSide": "bottom",
+      "toNode": "186f0a7d344f4a13",
+      "toSide": "top"
+    },
+    {
+      "id": "c4457f725f194585",
+      "fromNode": "186f0a7d344f4a13",
+      "fromSide": "bottom",
+      "toNode": "0e13684065c94a82",
+      "toSide": "top"
+    },
+    {
+      "id": "31ff8cb07d0a410f",
+      "fromNode": "0e13684065c94a82",
+      "fromSide": "bottom",
+      "toNode": "beb53231bb944c62",
+      "toSide": "top"
+    },
+    {
+      "id": "7647e603f4e64ec4",
+      "fromNode": "beb53231bb944c62",
+      "fromSide": "bottom",
+      "toNode": "565db30efd4e4bbe",
+      "toSide": "top"
+    },
+    {
+      "id": "30bfc968f8924049",
+      "fromNode": "565db30efd4e4bbe",
+      "fromSide": "bottom",
+      "toNode": "0c7ca624fc014c6c",
+      "toSide": "top"
+    },
+    {
+      "id": "da3242410d4544ad",
+      "fromNode": "0c7ca624fc014c6c",
+      "fromSide": "bottom",
+      "toNode": "c4dccf41912246d0",
+      "toSide": "top"
+    },
+    {
+      "id": "647228f3503a415a",
+      "fromNode": "f000f952a030423e",
+      "fromSide": "bottom",
+      "toNode": "a86d98f0ab7942ec",
+      "toSide": "top"
+    },
+    {
+      "id": "5fcea4d7c27640a4",
+      "fromNode": "a86d98f0ab7942ec",
+      "fromSide": "bottom",
+      "toNode": "c82560affc31493f",
+      "toSide": "top"
+    },
+    {
+      "id": "99e47c72e9284cbb",
+      "fromNode": "c82560affc31493f",
+      "fromSide": "bottom",
+      "toNode": "6a519f591f0b42b6",
+      "toSide": "top"
+    },
+    {
+      "id": "e08ea4a7d18844af",
+      "fromNode": "6a519f591f0b42b6",
+      "fromSide": "bottom",
+      "toNode": "619344dc96b6428e",
+      "toSide": "top"
+    },
+    {
+      "id": "abf58fa211ac4541",
+      "fromNode": "619344dc96b6428e",
+      "fromSide": "bottom",
+      "toNode": "c84c775724594b13",
+      "toSide": "top"
+    },
+    {
+      "id": "31e18c5a67604397",
+      "fromNode": "f000f952a030423e",
+      "fromSide": "bottom",
+      "toNode": "edc04839d6924232",
+      "toSide": "top"
+    },
+    {
+      "id": "8293121e58b64415",
+      "fromNode": "edc04839d6924232",
+      "fromSide": "bottom",
+      "toNode": "261df875a630463e",
+      "toSide": "top"
+    },
+    {
+      "id": "f696c0ffcf784483",
+      "fromNode": "261df875a630463e",
+      "fromSide": "bottom",
+      "toNode": "11d5739f738e4bff",
+      "toSide": "top"
+    },
+    {
+      "id": "ee4c1dea88584152",
+      "fromNode": "11d5739f738e4bff",
+      "fromSide": "bottom",
+      "toNode": "c35cff952d504ac1",
+      "toSide": "top"
+    },
+    {
+      "id": "12026e86778644e6",
+      "fromNode": "c35cff952d504ac1",
+      "fromSide": "bottom",
+      "toNode": "642a5aa19e6c45b3",
+      "toSide": "top"
+    },
+    {
+      "id": "ce84a3a792d04a44",
+      "fromNode": "642a5aa19e6c45b3",
+      "fromSide": "bottom",
+      "toNode": "897a7a07a5424397",
+      "toSide": "top"
+    },
+    {
+      "id": "d2c64c92a57a4bb9",
+      "fromNode": "897a7a07a5424397",
+      "fromSide": "bottom",
+      "toNode": "7b44b3825b7b49cf",
+      "toSide": "top"
+    },
+    {
+      "id": "faceadce3c2b4e22",
+      "fromNode": "f000f952a030423e",
+      "fromSide": "bottom",
+      "toNode": "da650136562348df",
+      "toSide": "top"
+    },
+    {
+      "id": "d672235e13124d86",
+      "fromNode": "da650136562348df",
+      "fromSide": "bottom",
+      "toNode": "c25972c387244c77",
+      "toSide": "top"
+    },
+    {
+      "id": "54abc3dbfb434f00",
+      "fromNode": "c25972c387244c77",
+      "fromSide": "bottom",
+      "toNode": "f3bbd5b94bb64309",
+      "toSide": "top"
+    },
+    {
+      "id": "3341170742174845",
+      "fromNode": "f3bbd5b94bb64309",
+      "fromSide": "bottom",
+      "toNode": "eb9ea2e48594449c",
+      "toSide": "top"
+    },
+    {
+      "id": "9b03a78222ba4b4c",
+      "fromNode": "f000f952a030423e",
+      "fromSide": "bottom",
+      "toNode": "78a4a4b0ab61459e",
+      "toSide": "top"
+    },
+    {
+      "id": "8fedc04520044591",
+      "fromNode": "78a4a4b0ab61459e",
+      "fromSide": "bottom",
+      "toNode": "4f954e62d9244f9d",
+      "toSide": "top"
+    },
+    {
+      "id": "7c87f8e541814acd",
+      "fromNode": "4f954e62d9244f9d",
+      "fromSide": "bottom",
+      "toNode": "d4fde9b9ab8a41f8",
+      "toSide": "top"
+    },
+    {
+      "id": "2d324c9418d34ba3",
+      "fromNode": "d4fde9b9ab8a41f8",
+      "fromSide": "bottom",
+      "toNode": "b55cb2c184694258",
+      "toSide": "top"
+    }
+  ]
+}

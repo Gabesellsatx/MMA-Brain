@@ -1,0 +1,271 @@
+{
+  "nodes": [
+    {
+      "id": "39fe964ca7ac483b",
+      "type": "text",
+      "x": 1050,
+      "y": 0,
+      "width": 360,
+      "height": 110,
+      "text": "# Strength & Conditioning\nFundamentals → practice → application",
+      "color": "3"
+    },
+    {
+      "id": "b8f36db8269e42d8",
+      "type": "text",
+      "x": 0,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Fundamentals",
+      "color": "3"
+    },
+    {
+      "id": "df6d8214fffd4ceb",
+      "type": "file",
+      "x": 0,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Progressive Overload.md",
+      "color": "3"
+    },
+    {
+      "id": "471581e5d95a43fc",
+      "type": "file",
+      "x": 0,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Recovery.md",
+      "color": "3"
+    },
+    {
+      "id": "0b2c95920a6348b6",
+      "type": "file",
+      "x": 0,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Aerobic Base.md",
+      "color": "3"
+    },
+    {
+      "id": "cd22a3dcc54f4549",
+      "type": "file",
+      "x": 0,
+      "y": 686,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Power Development.md",
+      "color": "3"
+    },
+    {
+      "id": "ddafc1f259454e07",
+      "type": "text",
+      "x": 520,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Training",
+      "color": "3"
+    },
+    {
+      "id": "cf73612262344fff",
+      "type": "file",
+      "x": 520,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Strength.md",
+      "color": "3"
+    },
+    {
+      "id": "dc85ca9f42c046d6",
+      "type": "file",
+      "x": 520,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Power.md",
+      "color": "3"
+    },
+    {
+      "id": "11d0c964e40d4aa6",
+      "type": "file",
+      "x": 520,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Cardio.md",
+      "color": "3"
+    },
+    {
+      "id": "4a048db9dd814eea",
+      "type": "file",
+      "x": 520,
+      "y": 686,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Grip.md",
+      "color": "3"
+    },
+    {
+      "id": "7ef3dffd83914f6a",
+      "type": "file",
+      "x": 520,
+      "y": 798,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Neck Conditioning.md",
+      "color": "3"
+    },
+    {
+      "id": "235bde1ab02e4faf",
+      "type": "text",
+      "x": 1040,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Tracking",
+      "color": "3"
+    },
+    {
+      "id": "e378d086cb634110",
+      "type": "file",
+      "x": 1040,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Training Load.md",
+      "color": "3"
+    },
+    {
+      "id": "60bb3af0d23f4e2f",
+      "type": "file",
+      "x": 1040,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Fatigue.md",
+      "color": "3"
+    },
+    {
+      "id": "4c51478ab1674c47",
+      "type": "file",
+      "x": 1040,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Performance Testing.md",
+      "color": "3"
+    }
+  ],
+  "edges": [
+    {
+      "id": "a62d550700ae4e39",
+      "fromNode": "39fe964ca7ac483b",
+      "fromSide": "bottom",
+      "toNode": "b8f36db8269e42d8",
+      "toSide": "top"
+    },
+    {
+      "id": "06c6dc50df2a4acb",
+      "fromNode": "b8f36db8269e42d8",
+      "fromSide": "bottom",
+      "toNode": "df6d8214fffd4ceb",
+      "toSide": "top"
+    },
+    {
+      "id": "88b7ade7f3b141c0",
+      "fromNode": "df6d8214fffd4ceb",
+      "fromSide": "bottom",
+      "toNode": "471581e5d95a43fc",
+      "toSide": "top"
+    },
+    {
+      "id": "91c5863fefde4343",
+      "fromNode": "471581e5d95a43fc",
+      "fromSide": "bottom",
+      "toNode": "0b2c95920a6348b6",
+      "toSide": "top"
+    },
+    {
+      "id": "1d26ad3b17bd4cbc",
+      "fromNode": "0b2c95920a6348b6",
+      "fromSide": "bottom",
+      "toNode": "cd22a3dcc54f4549",
+      "toSide": "top"
+    },
+    {
+      "id": "c7489ed0dab44ea9",
+      "fromNode": "39fe964ca7ac483b",
+      "fromSide": "bottom",
+      "toNode": "ddafc1f259454e07",
+      "toSide": "top"
+    },
+    {
+      "id": "cccdc797f0184d1e",
+      "fromNode": "ddafc1f259454e07",
+      "fromSide": "bottom",
+      "toNode": "cf73612262344fff",
+      "toSide": "top"
+    },
+    {
+      "id": "fe8d5ea7df8846b3",
+      "fromNode": "cf73612262344fff",
+      "fromSide": "bottom",
+      "toNode": "dc85ca9f42c046d6",
+      "toSide": "top"
+    },
+    {
+      "id": "e2fe02215b3a491c",
+      "fromNode": "dc85ca9f42c046d6",
+      "fromSide": "bottom",
+      "toNode": "11d0c964e40d4aa6",
+      "toSide": "top"
+    },
+    {
+      "id": "e0e5f8649c5a4863",
+      "fromNode": "11d0c964e40d4aa6",
+      "fromSide": "bottom",
+      "toNode": "4a048db9dd814eea",
+      "toSide": "top"
+    },
+    {
+      "id": "fd45bdd435e349eb",
+      "fromNode": "4a048db9dd814eea",
+      "fromSide": "bottom",
+      "toNode": "7ef3dffd83914f6a",
+      "toSide": "top"
+    },
+    {
+      "id": "baa6b213904748a8",
+      "fromNode": "39fe964ca7ac483b",
+      "fromSide": "bottom",
+      "toNode": "235bde1ab02e4faf",
+      "toSide": "top"
+    },
+    {
+      "id": "e88f5eb5b4d04859",
+      "fromNode": "235bde1ab02e4faf",
+      "fromSide": "bottom",
+      "toNode": "e378d086cb634110",
+      "toSide": "top"
+    },
+    {
+      "id": "cb4e794ceb1346e1",
+      "fromNode": "e378d086cb634110",
+      "fromSide": "bottom",
+      "toNode": "60bb3af0d23f4e2f",
+      "toSide": "top"
+    },
+    {
+      "id": "92c701ab829148cb",
+      "fromNode": "60bb3af0d23f4e2f",
+      "fromSide": "bottom",
+      "toNode": "4c51478ab1674c47",
+      "toSide": "top"
+    }
+  ]
+}

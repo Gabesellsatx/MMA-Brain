@@ -1,0 +1,322 @@
+{
+  "nodes": [
+    {
+      "id": "91320abf2ee94f69",
+      "type": "text",
+      "x": 1050,
+      "y": 0,
+      "width": 360,
+      "height": 110,
+      "text": "# MMA Integration\nFundamentals → practice → application",
+      "color": "1"
+    },
+    {
+      "id": "1903b718fe924221",
+      "type": "text",
+      "x": 0,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Fundamentals",
+      "color": "1"
+    },
+    {
+      "id": "325079d283b24e7d",
+      "type": "file",
+      "x": 0,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Striking to Grappling.md",
+      "color": "1"
+    },
+    {
+      "id": "ee27fa3f252b4da2",
+      "type": "file",
+      "x": 0,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Grappling to Striking.md",
+      "color": "1"
+    },
+    {
+      "id": "b46c9aa1444e420a",
+      "type": "file",
+      "x": 0,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Wall Awareness.md",
+      "color": "1"
+    },
+    {
+      "id": "ef70daab94ab4ed3",
+      "type": "file",
+      "x": 0,
+      "y": 686,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Range Transitions.md",
+      "color": "1"
+    },
+    {
+      "id": "3cdc68565ff04fc5",
+      "type": "file",
+      "x": 0,
+      "y": 798,
+      "width": 290,
+      "height": 68,
+      "file": "10 Fundamentals/Rules & Safety.md",
+      "color": "1"
+    },
+    {
+      "id": "af591e045d11486a",
+      "type": "text",
+      "x": 520,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Standing",
+      "color": "1"
+    },
+    {
+      "id": "f80c738d61e748f4",
+      "type": "file",
+      "x": 520,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Strike to Shot.md",
+      "color": "1"
+    },
+    {
+      "id": "02539b9e0354442f",
+      "type": "file",
+      "x": 520,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Clinch Entry.md",
+      "color": "1"
+    },
+    {
+      "id": "a50130a009844239",
+      "type": "file",
+      "x": 520,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Cage Wrestling.md",
+      "color": "1"
+    },
+    {
+      "id": "5397d106ac6f47e8",
+      "type": "text",
+      "x": 1040,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Ground",
+      "color": "1"
+    },
+    {
+      "id": "7cab61127a804cac",
+      "type": "file",
+      "x": 1040,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Ground and Pound Positioning.md",
+      "color": "1"
+    },
+    {
+      "id": "a8067b10a0404fe0",
+      "type": "file",
+      "x": 1040,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Wall Walk.md",
+      "color": "1"
+    },
+    {
+      "id": "d338d21151d344ca",
+      "type": "file",
+      "x": 1040,
+      "y": 574,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Stand-Up From Bottom.md",
+      "color": "1"
+    },
+    {
+      "id": "8486242a3afc43d4",
+      "type": "file",
+      "x": 1040,
+      "y": 686,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Submission Defense Under Strikes.md",
+      "color": "1"
+    },
+    {
+      "id": "06d3e3a1f39c4ee6",
+      "type": "text",
+      "x": 1560,
+      "y": 210,
+      "width": 290,
+      "height": 75,
+      "text": "## Training",
+      "color": "1"
+    },
+    {
+      "id": "a00e0ac89232444e",
+      "type": "file",
+      "x": 1560,
+      "y": 350,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/MMA Situational Rounds.md",
+      "color": "1"
+    },
+    {
+      "id": "8415737da5dc46cd",
+      "type": "file",
+      "x": 1560,
+      "y": 462,
+      "width": 290,
+      "height": 68,
+      "file": "02 Techniques/Transition Drills.md",
+      "color": "1"
+    }
+  ],
+  "edges": [
+    {
+      "id": "a2c1f41e100e4f7d",
+      "fromNode": "91320abf2ee94f69",
+      "fromSide": "bottom",
+      "toNode": "1903b718fe924221",
+      "toSide": "top"
+    },
+    {
+      "id": "9d3b13abd7c44fc6",
+      "fromNode": "1903b718fe924221",
+      "fromSide": "bottom",
+      "toNode": "325079d283b24e7d",
+      "toSide": "top"
+    },
+    {
+      "id": "e482745a0a224185",
+      "fromNode": "325079d283b24e7d",
+      "fromSide": "bottom",
+      "toNode": "ee27fa3f252b4da2",
+      "toSide": "top"
+    },
+    {
+      "id": "f5f5a5cfb1e245b5",
+      "fromNode": "ee27fa3f252b4da2",
+      "fromSide": "bottom",
+      "toNode": "b46c9aa1444e420a",
+      "toSide": "top"
+    },
+    {
+      "id": "8497e34447134db1",
+      "fromNode": "b46c9aa1444e420a",
+      "fromSide": "bottom",
+      "toNode": "ef70daab94ab4ed3",
+      "toSide": "top"
+    },
+    {
+      "id": "9881810e5d164ed8",
+      "fromNode": "ef70daab94ab4ed3",
+      "fromSide": "bottom",
+      "toNode": "3cdc68565ff04fc5",
+      "toSide": "top"
+    },
+    {
+      "id": "fb61be898a2843ae",
+      "fromNode": "91320abf2ee94f69",
+      "fromSide": "bottom",
+      "toNode": "af591e045d11486a",
+      "toSide": "top"
+    },
+    {
+      "id": "69ca3ae033b34893",
+      "fromNode": "af591e045d11486a",
+      "fromSide": "bottom",
+      "toNode": "f80c738d61e748f4",
+      "toSide": "top"
+    },
+    {
+      "id": "26ae5abde1f64b31",
+      "fromNode": "f80c738d61e748f4",
+      "fromSide": "bottom",
+      "toNode": "02539b9e0354442f",
+      "toSide": "top"
+    },
+    {
+      "id": "97f5862544eb4c13",
+      "fromNode": "02539b9e0354442f",
+      "fromSide": "bottom",
+      "toNode": "a50130a009844239",
+      "toSide": "top"
+    },
+    {
+      "id": "c4f4f368ab3d4268",
+      "fromNode": "91320abf2ee94f69",
+      "fromSide": "bottom",
+      "toNode": "5397d106ac6f47e8",
+      "toSide": "top"
+    },
+    {
+      "id": "e4444a9ea7cd4c4a",
+      "fromNode": "5397d106ac6f47e8",
+      "fromSide": "bottom",
+      "toNode": "7cab61127a804cac",
+      "toSide": "top"
+    },
+    {
+      "id": "b36d292d114746bf",
+      "fromNode": "7cab61127a804cac",
+      "fromSide": "bottom",
+      "toNode": "a8067b10a0404fe0",
+      "toSide": "top"
+    },
+    {
+      "id": "331acb2b28e74a35",
+      "fromNode": "a8067b10a0404fe0",
+      "fromSide": "bottom",
+      "toNode": "d338d21151d344ca",
+      "toSide": "top"
+    },
+    {
+      "id": "72acc130fd9b4d30",
+      "fromNode": "d338d21151d344ca",
+      "fromSide": "bottom",
+      "toNode": "8486242a3afc43d4",
+      "toSide": "top"
+    },
+    {
+      "id": "dd8471cd6e7248db",
+      "fromNode": "91320abf2ee94f69",
+      "fromSide": "bottom",
+      "toNode": "06d3e3a1f39c4ee6",
+      "toSide": "top"
+    },
+    {
+      "id": "fef2ef4b7ddf4b70",
+      "fromNode": "06d3e3a1f39c4ee6",
+      "fromSide": "bottom",
+      "toNode": "a00e0ac89232444e",
+      "toSide": "top"
+    },
+    {
+      "id": "b30af859f8f94bdd",
+      "fromNode": "a00e0ac89232444e",
+      "fromSide": "bottom",
+      "toNode": "8415737da5dc46cd",
+      "toSide": "top"
+    }
+  ]
+}
