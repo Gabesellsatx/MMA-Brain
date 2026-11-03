@@ -19,3 +19,5 @@ Today in jujitsu, I practiced the Delahiva, and I was struggling with being able
 3. Link existing notes before creating duplicates.
 4. Mark unverified details as unverified; do not invent video transcripts.
 5. Never overwrite hand-written observations without approval.
+
+Testing my Mma notes for the 21st time
