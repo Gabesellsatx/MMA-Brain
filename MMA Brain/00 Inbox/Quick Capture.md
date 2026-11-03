@@ -12,7 +12,7 @@ Add raw notes here; process later. Never delete original observations until revi
 - What worked:
 - What failed:
 - Next drill:
-
+Today in jujitsu, I practiced the Delahiva, and I was struggling with being able to off-balance in regular Delahiva and switch stances. The torque on my knee hurt. 
 ## AI sorting rules
 1. Preserve original wording in a practice or source note.
 2. Suggest art(s), type, position, technique, related links.
