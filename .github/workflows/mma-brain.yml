@@ -1,12 +1,6 @@
 name: MMA Brain — first-run review
 on:
   workflow_dispatch:
-  # Temporary setup-branch test trigger; removed after validation.
-  push:
-    branches: [setup/mma-brain-first-run]
-    paths:
-      - .github/workflows/mma-brain.yml
-      - scripts/organize_mma.py
 permissions:
   contents: write
   pull-requests: write
