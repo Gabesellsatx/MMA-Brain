@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "processed": [
+    {
+      "sha256": "2dcbcfce1fad642dbc47eae5bf631f9079239058d4c998317c9bd34f4774b9bb",
+      "source": "MMA Brain/00 Inbox/Quick Capture.md",
+      "destination": "MMA Brain/02 Techniques/Open Guard.md",
+      "status": "proposed_for_review"
+    }
+  ]
+}
