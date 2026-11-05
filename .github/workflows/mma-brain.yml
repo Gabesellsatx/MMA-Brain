@@ -1,75 +1,121 @@
-name: MMA Brain — first-run review
+name: MMA Brain — organize captures
 on:
+  pull_request:
+    paths: ['scripts/**', '.github/workflows/mma-brain.yml']
   workflow_dispatch:
+    inputs:
+      validate_only:
+        description: 'Test synthetic captures without proposing real notes'
+        type: boolean
+        default: false
+      retry_closed_proposal:
+        description: 'Explicitly retry a previously closed, unmerged proposal'
+        type: boolean
+        default: false
+  # Weekly processing stays disabled pending approval.
+  # schedule:
+  #   - cron: '17 20 * * 0'
+  #     timezone: America/Chicago
 permissions:
   contents: write
   pull-requests: write
 concurrency:
-  group: mma-brain-first-run
+  group: mma-brain-organizer
   cancel-in-progress: false
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
 jobs:
   organize:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 40
     steps:
-      - uses: actions/checkout@v7.0.1
-      - uses: actions/setup-python@v7.1.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: '3.12'
-      - name: Prepare first-run observation
-        run: python scripts/organize_mma.py
-      - name: Verify preservation, scope, limit, and repeat safety
+      - name: Run integrity tests
+        run: python scripts/test_organize_mma.py
+      - name: Select validation or processing; wait for human review
+        id: gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VALIDATE_ONLY: ${{ inputs.validate_only }}
+          RETRY_CLOSED: ${{ inputs.retry_closed_proposal }}
         shell: bash
         run: |
+          if [[ "$GITHUB_EVENT_NAME" == pull_request || "$GITHUB_REF_NAME" != main || "$VALIDATE_ONLY" == true ]]; then
+            echo 'mode=validate' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          gh pr list --repo "$GITHUB_REPOSITORY" --state all --base main --head ai/mma-brain-organized --limit 1 --json number,state,mergedAt,url > "$RUNNER_TEMP/mma-pr.json"
           python - <<'PY'
-          import hashlib
-          import json
-          import subprocess
+          import json, os
           from pathlib import Path
-
-          inbox = 'MMA Brain/00 Inbox/Quick Capture.md'
-          allowed = {
-              'MMA Brain/02 Techniques/Open Guard.md',
-              'MMA Brain/06 Problems/Problem Tracker.md',
-              'MMA Brain/00 Inbox/Processing Ledger.json',
-          }
-          original = subprocess.check_output(['git', 'show', 'HEAD:' + inbox])
-          assert Path(inbox).read_bytes() == original, 'Original inbox changed'
+          prs = json.loads((Path(os.environ['RUNNER_TEMP']) / 'mma-pr.json').read_text())
+          blocked = bool(prs and (prs[0]['state'] == 'OPEN' or (not prs[0]['mergedAt'] and os.environ['RETRY_CLOSED'] != 'true')))
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write('mode=' + ('wait' if blocked else 'organize') + '\n')
+          if blocked:
+              with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
+                  f.write('Waiting for review of ' + prs[0]['url'] + '. No captures processed.\n')
+          PY
+      - name: Count unprocessed captures
+        if: steps.gate.outputs.mode == 'organize'
+        id: plan
+        run: python scripts/organize_mma.py plan
+      - name: Install verified local model runtime
+        if: steps.gate.outputs.mode == 'validate' || (steps.gate.outputs.mode == 'organize' && steps.plan.outputs.count != '0')
+        run: bash scripts/install_mma_model.sh
+      - name: Test real model on three synthetic captures
+        if: steps.gate.outputs.mode == 'validate' || (steps.gate.outputs.mode == 'organize' && steps.plan.outputs.count != '0')
+        run: python scripts/test_organize_mma.py --live
+      - name: Propose up to three real captures and verify preservation
+        if: steps.gate.outputs.mode == 'organize' && steps.plan.outputs.count != '0'
+        id: apply
+        shell: bash
+        run: |
+          python scripts/organize_mma.py apply > "$RUNNER_TEMP/mma-result.json"
+          python - <<'PY'
+          import json, os, subprocess
+          from pathlib import Path
+          result = json.loads((Path(os.environ['RUNNER_TEMP']) / 'mma-result.json').read_text())
           changed = set(subprocess.check_output(['git', 'diff', '--name-only']).decode().splitlines())
           changed.update(subprocess.check_output(['git', 'ls-files', '--others', '--exclude-standard']).decode().splitlines())
-          assert changed <= allowed, f'Unexpected modified files: {changed - allowed}'
-          ledger = json.loads(Path('MMA Brain/00 Inbox/Processing Ledger.json').read_text())
-          assert len(ledger['processed']) == 1, 'First run must propose exactly one observation (cap: 3)'
-          before = {p: Path(p).read_bytes() for p in allowed}
-          subprocess.run(['python', 'scripts/organize_mma.py'], check=True)
-          assert all(Path(p).read_bytes() == b for p, b in before.items()), 'Repeat added duplicate changes'
-          assert Path(inbox).read_bytes() == original, 'Repeat changed inbox'
-          print('PASS: one observation (cap: 3); only permitted files changed; repeat is unchanged.')
-          print('Quick Capture.md SHA-256:', hashlib.sha256(original).hexdigest())
+          assert changed == set(result['changed_paths']), 'Unexpected repository changes'
+          assert 1 <= result['processed'] <= 3
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
+              f.write(f"Proposed {result['processed']} captures; {result['remaining']} remain. Originals preserved.\n\nInbox SHA-256: `{result['inbox_sha256']}`\n")
+          print(json.dumps(result, indent=2))
           PY
-      - name: Create draft pull request
+      - name: Open draft for human review
+        if: steps.apply.outputs.count != ''
         id: proposal
-        uses: peter-evans/create-pull-request@v8.1.1
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          base: ${{ github.ref_name }}
-          commit-message: 'docs(mma): propose first-run De La Riva capture'
-          branch: ai/mma-brain-first-run
+          base: main
+          branch: ai/mma-brain-organized
           delete-branch: false
           draft: true
-          title: 'MMA Brain: review first-run De La Riva observation'
+          commit-message: 'docs(mma): propose organized dictations for review'
+          title: 'MMA Brain: review organized dictations'
           body: |
-            First-run proposal only. One observation processed (limit: 3).
-            Quick Capture.md remains byte-for-byte unchanged.
-            Please verify ambiguous stance-switching language and knee-pain details.
-            This proposal is based on the branch where the test ran.
-            No schedule is enabled, no original observations are deleted, and nothing is merged.
+            Proposes at most three new captures. Original notes remain byte-for-byte unchanged.
+            Each practice note includes the verbatim capture, proposed cleanup, links to existing notes, and questions.
+            Includes the processing ledger and capture index. Review each proposal against its original before merging.
+            No automatic merge. Further processing waits while this PR is open; closing without merging pauses retries.
           add-paths: |
-            MMA Brain/02 Techniques/Open Guard.md
-            MMA Brain/06 Problems/Problem Tracker.md
+            MMA Brain/05 Practice/Captures/*.md
+            MMA Brain/05 Practice/Capture Index.md
             MMA Brain/00 Inbox/Processing Ledger.json
-      - name: Report draft
+      - name: Report outcome
         env:
+          MODE: ${{ steps.gate.outputs.mode }}
+          COUNT: ${{ steps.plan.outputs.count }}
           PR_URL: ${{ steps.proposal.outputs.pull-request-url }}
         run: |
-          echo "Draft pull request: $PR_URL"
+          if [[ "$MODE" == validate ]]; then echo 'PASS: integrity tests and real-model synthetic validation. No real captures processed.' >> "$GITHUB_STEP_SUMMARY"; fi
+          if [[ "$MODE" == organize && "$COUNT" == 0 ]]; then echo 'No new captures.' >> "$GITHUB_STEP_SUMMARY"; fi
+          if [[ -n "$PR_URL" ]]; then echo "Draft proposal: $PR_URL" >> "$GITHUB_STEP_SUMMARY"; fi
