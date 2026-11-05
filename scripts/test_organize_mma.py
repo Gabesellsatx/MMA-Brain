@@ -164,6 +164,7 @@ def live():
             outputs.append(copy.deepcopy(data))
             return data
         result = m.apply(root, model)
+        print(json.dumps({'synthetic_model_responses': outputs}, indent=2), flush=True)
         assert result['processed'] == 3
         for name, content in before.items():
             assert (root / name).read_bytes() == content, name
