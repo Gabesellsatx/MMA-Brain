@@ -25,3 +25,4 @@ Hey Siri I want you to add to my notes
 
 
 Mike I went to Jiu Jitsu today and I noticed that my right knee whenever I torque it to the left it messes up and my single leg X is is good but it feels a little bit weak I don't really know how to off-balance my opponents and and tripped them in the correct fashion and I need to get better at that
+I could say my dad lava is really shit right now on my left side and I want to improve how good I am off balancing on my left-hand side I noticed in the role I kept getting caught extending my arms and I kept getting dusted and my wrestling I put my heads down and I kept getting my base dropped because my head was down
