@@ -125,11 +125,78 @@ class SafetyTests(unittest.TestCase):
         with self.assertRaises(ValueError): self.run_apply()
 
     def test_active_markup_escaped(self):
-        self.run_apply(lambda raw, cat: dict(answer(raw, cat), cleaned='<script>x</script> [[injected]] ![image](https://invalid.example)'))
+        self.put(m.INBOX, b'<script>x</script> [[injected]] ![image](https://invalid.example)')
+        self.run_apply()
         note = next((self.root / m.CAPTURES).glob('*.md')).read_text()
-        self.assertNotIn('<script>', note)
-        self.assertNotIn('[[injected]]', note)
-        self.assertNotIn('![image]', note)
+        cleaned_section = note.split('## Cleaned observation', 1)[1]
+        self.assertNotIn('<script>', cleaned_section)
+        self.assertNotIn('[[injected]]', cleaned_section)
+        self.assertNotIn('![image]', cleaned_section)
+
+    def test_no_substitution_for_missing_technique(self):
+        self.put('MMA Brain/02 Techniques/De Ashi Barai.md', b'# De Ashi Barai')
+        self.put(m.INBOX, b'I practiced Delahiva and my knee hurt.')
+        self.run_apply(lambda raw, cat: dict(answer(raw, cat), title='De Ashi Barai',
+                       cleaned='I practiced De Ashi Barai with hip pain.', related=list(cat)))
+        note = next((self.root / m.CAPTURES).glob('*.md')).read_text()
+        self.assertIn('I practiced De La Riva and my knee hurt.', note)
+        self.assertNotIn('De Ashi Barai', note)
+        self.assertIn('No existing note matches De La Riva', note)
+
+    def test_single_leg_x_not_linked_to_takedown(self):
+        self.put('MMA Brain/02 Techniques/Single Leg.md', b'# Single Leg')
+        self.put(m.INBOX, b'My single-leg X feels weak. My knee messes up when I turn left.')
+        self.run_apply(lambda raw, cat: dict(answer(raw, cat), title='Single Leg',
+                       cleaned='My single-leg grip is secure, but my knee is unstable.', related=list(cat)))
+        note = next((self.root / m.CAPTURES).glob('*.md')).read_text()
+        self.assertIn('# Single Leg X', note)
+        self.assertIn('My Single Leg X feels weak. My knee messes up when I turn left.', note)
+        self.assertNotIn('[[02 Techniques/Single Leg|', note)
+        self.assertNotIn('unstable', note)
+        self.assertNotIn('grip is secure', note)
+
+    def test_distinct_explicit_technique_mentions(self):
+        catalog = {1: '02 Techniques/Single Leg', 2: '02 Techniques/Single Leg X',
+                   3: '02 Techniques/De La Riva', 4: '02 Techniques/Reverse De La Riva'}
+        raw = 'I drilled single leg X, then a single leg, then reverse De La Riva.'
+        data = m.preserve_meaning(raw, answer(raw, catalog), catalog)
+        self.assertEqual(data['related'], [1, 2, 4])
+        self.assertIn('Reverse De La Riva', data['title'])
+
+    def test_unfamiliar_names_and_uncertainty_preserved(self):
+        raw = 'Maybe it was the z-guard thing? I am not sure. It did not work.'
+        data = m.preserve_meaning(raw, dict(answer(raw, {}),
+                                 cleaned='I successfully swept from half guard.',
+                                 questions=['Did the new grip improve the sweep?']), {})
+        self.assertEqual(data['cleaned'], raw)
+        self.assertEqual(data['questions'], [])
+        self.assertEqual(data['related'], [])
+
+    def test_needs_context_has_no_invented_training_claim(self):
+        raw = 'Hey Siri I want you to add to my notes'
+        data = m.preserve_meaning(raw, dict(answer(raw, {}), art='Unclear',
+                                 kind='needs_context'), {})
+        self.assertEqual(data['cleaned'], raw)
+        self.assertEqual(data['title'], 'Needs context')
+        self.assertEqual(data['related'], [])
+
+    def test_body_part_is_not_treated_as_strike(self):
+        catalog = {1: '02 Techniques/Knee', 2: '02 Techniques/Elbow'}
+        raw = 'My knee hurt and my elbow was sore.'
+        data = m.preserve_meaning(raw, answer(raw, catalog), catalog)
+        self.assertEqual(data['cleaned'], raw)
+        self.assertEqual(data['related'], [])
+        self.assertEqual(data['title'], 'Practice capture')
+
+    def test_verified_boundary_preserves_all_original_files(self):
+        from unittest.mock import patch
+        before = snapshot(self.root)
+        real_apply = m.apply
+        with patch.object(m, 'apply', side_effect=lambda root: real_apply(root, answer)):
+            result = m.verified_apply(self.root)
+        self.assertEqual(result['processed'], 1)
+        for path, content in before.items():
+            self.assertEqual((self.root / path).read_bytes(), content)
 
     def test_existing_capture_not_overwritten(self):
         c = m.captures_from((self.root / m.INBOX).read_text())[0]
