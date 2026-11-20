@@ -6,9 +6,9 @@ kind: problem
 source_sha256: 50b0bd2faae0d02f9b5eea963565036fd65d25acbba65efbabda2ccd6a4d3ce1
 ---
 
-# Delahiva
+# De La Riva
 
-AI proposal. Review the original and correct uncertainties before accepting.
+Review proposal. Cleanup is limited to recognized spelling fixes; classification still needs your review.
 
 ## Original observation
 
@@ -20,14 +20,12 @@ Source: [[Quick Capture]], line 15 at processing time.
 
 ## Cleaned observation
 
-Today in Brazilian Jiu-Jitsu, I practiced De Ashi Barai and was struggling with being able to off-balance in regular De Ashi Barai and switch stances. The torque on my knee hurt.
+Today in Jiu-Jitsu, I practiced the De La Riva, and I was struggling with being able to off-balance in regular De La Riva and switch stances. The torque on my knee hurt.
 
 ## Related existing notes
 
-- [[02 Techniques/De Ashi Barai|De Ashi Barai]]
-- [[02 Techniques/Off Balancing|Off Balancing]]
-- [[02 Techniques/Hips (Mobility)|Hips (Mobility)]]
+- No confident match; review context.
 
 ## Needs review
 
-- Confirm the cleaned text preserves your intended meaning.
+- No existing note matches De La Riva; confirm the technique name before adding a link.
