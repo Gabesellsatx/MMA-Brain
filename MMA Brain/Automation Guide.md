@@ -10,7 +10,7 @@ Push the vault with your existing Obsidian Git setup. Cloud processing sees only
 
 After installation on main, open GitHub Actions → MMA Brain — organize captures → Run workflow → main. Leave “Test synthetic captures” unchecked to propose up to three real observations. Other branches and pull requests run synthetic validation only.
 
-Weekly processing is currently disabled. The prepared schedule is Sunday at 8:17 p.m. America/Chicago and needs explicit activation. GitHub may delay scheduled runs and disables inactive public-repository schedules after 60 days.
+Weekly processing is enabled for Sunday at 8:17 p.m. America/Chicago (Central time, including daylight-saving changes), following approval and the user-confirmed iPhone pull-back sync check. Each run proposes at most three captures and waits for review before another batch. GitHub may delay scheduled runs and disables inactive public-repository schedules after 60 days.
 
 Open the generated draft pull request. Compare every cleaned note against its verbatim original, correct uncertain details, then mark ready and merge only when satisfied. Nothing merges automatically. Pull main back to your phone and open [[Capture Index]] in 05 Practice to find accepted notes and their existing technique links.
 
