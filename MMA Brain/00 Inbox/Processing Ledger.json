@@ -1,0 +1,32 @@
+{
+  "schema_version": 2,
+  "processed": [
+    {
+      "sha256": "50b0bd2faae0d02f9b5eea963565036fd65d25acbba65efbabda2ccd6a4d3ce1",
+      "source": "MMA Brain/00 Inbox/Quick Capture.md",
+      "source_line": 15,
+      "destination": "MMA Brain/05 Practice/Captures/Capture-50b0bd2faae0d02f9b5eea96.md",
+      "status": "proposed_for_review",
+      "model": "qwen3.5:4b",
+      "processed_at": "2026-11-20T04:58:01.319357+00:00"
+    },
+    {
+      "sha256": "7b59542da90f32314d4ac1f0e0a062f17417281d1db7d24ea955707fcd6bccc0",
+      "source": "MMA Brain/00 Inbox/Quick Capture.md",
+      "source_line": 24,
+      "destination": "MMA Brain/05 Practice/Captures/Capture-7b59542da90f32314d4ac1f0.md",
+      "status": "proposed_for_review",
+      "model": "qwen3.5:4b",
+      "processed_at": "2026-11-20T04:59:19.438283+00:00"
+    },
+    {
+      "sha256": "585688e1a956aeea7cff19075076736f0d15d30b9fc7dc6f91028956c9e77510",
+      "source": "MMA Brain/00 Inbox/Quick Capture.md",
+      "source_line": 27,
+      "destination": "MMA Brain/05 Practice/Captures/Capture-585688e1a956aeea7cff1907.md",
+      "status": "proposed_for_review",
+      "model": "qwen3.5:4b",
+      "processed_at": "2026-11-20T05:00:47.017776+00:00"
+    }
+  ]
+}
