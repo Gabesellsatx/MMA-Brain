@@ -12,10 +12,10 @@ on:
         description: 'Explicitly retry a previously closed, unmerged proposal'
         type: boolean
         default: false
-  # Weekly processing stays disabled pending approval.
-  # schedule:
-  #   - cron: '17 20 * * 0'
-  #     timezone: America/Chicago
+  # Approved after the iPhone pull-back sync check.
+  schedule:
+    - cron: '17 20 * * 0'
+      timezone: America/Chicago
 permissions:
   contents: write
   pull-requests: write
