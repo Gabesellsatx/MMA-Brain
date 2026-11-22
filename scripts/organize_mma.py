@@ -211,13 +211,68 @@ def plain(text):
     return re.sub(r'([\\`*_{}\[\]#!|])', r'\\\1', html.escape(text, quote=False))
 
 
+COPYEDIT_RULES = [
+    (r'\b(?:jujitsu|jiu[ -]?jitsu)\b', 'Jiu-Jitsu'),
+    (r'\bkimora\b', 'Kimura'),
+    (r'\bclosed[ -]+gaurd\b', 'closed guard'),
+    (r'\bguilitine\b', 'guillotine'),
+    (r'\b(?:delahiva|de[ -]+la[ -]+riva)\b', 'De La Riva'),
+    (r'\bsingle[ -]+leg[ -]+x\b', 'Single Leg X'),
+]
+# Recognize these even when the vault has no corresponding note. A missing
+# Single Leg X note must never turn it into the shorter Single Leg technique.
+PROTECTED_TERMS = ('De La Riva', 'Single Leg X', 'Reverse De La Riva')
+AMBIGUOUS_NOTE_TITLES = {'knee', 'elbow', 'cross', 'hook'}
+
+
+def copyedit(raw):
+    """Only reviewed spelling substitutions; never paraphrase an observation."""
+    for pattern, replacement in COPYEDIT_RULES:
+        raw = re.sub(pattern, replacement, raw, flags=re.I)
+    return raw.strip()
+
+
+def preserve_meaning(raw, data, catalog):
+    """Keep model classification, but derive displayed claims from the source.
+
+    Freeform model rewrites previously replaced techniques and invented symptoms.
+    Titles, links and questions are now conservative too; valid JSON alone is
+    not evidence that a model preserved the student's meaning.
+    """
+    cleaned = copyedit(raw)
+    normalized = ' '.join(re.findall(r'\w+', cleaned.casefold()))
+    names = {Path(path).name for path in catalog.values()
+             if Path(path).name.casefold() not in AMBIGUOUS_NOTE_TITLES} | set(PROTECTED_TERMS)
+    matches = []
+    for name in names:
+        term = ' '.join(re.findall(r'\w+', copyedit(name).casefold()))
+        if term:
+            matches.extend((m.start(), m.end(), name) for m in
+                           re.finditer(r'(?<!\w)' + re.escape(term) + r'(?!\w)', normalized))
+    # Prefer the complete named technique over a phrase inside it.
+    longest = [m for m in matches if not any(
+        n[0] <= m[0] and m[1] <= n[1] and n[1] - n[0] > m[1] - m[0]
+        for n in matches)]
+    mentioned = list(dict.fromkeys(m[2] for m in sorted(longest)))
+    unclear = data['kind'] == 'needs_context'
+    related = [] if unclear else [i for i, path in catalog.items()
+                                 if Path(path).name in mentioned][:6]
+    missing = [name for name in mentioned if name not in {Path(p).name for p in catalog.values()}]
+    questions = (['What training observation did you intend to record?'] if unclear else
+                 [f'No existing note matches {name}; confirm the technique name before adding a link.'
+                  for name in missing[:3]])
+    title = 'Needs context' if unclear else (' / '.join(mentioned)[:120] or 'Practice capture')
+    return dict(data, title=title, cleaned=cleaned, related=related, questions=questions)
+
+
 def render(c, data, catalog):
     fence = '`' * max(3, 1 + max([len(x) for x in re.findall(r'`+', c.raw)] or [0]))
     links = '\n'.join('- [[' + catalog[i] + '|' + Path(catalog[i]).name + ']]' for i in data['related']) or '- No confident match; review context.'
     questions = '\n'.join('- ' + plain(q) for q in data['questions']) or '- Confirm the cleaned text preserves your intended meaning.'
     return (f'---\ntype: practice-capture\nstatus: needs-review\nart: {json.dumps(data["art"])}\n'
             f'kind: {data["kind"]}\nsource_sha256: {c.sha256}\n---\n\n# {plain(data["title"])}\n\n'
-            'AI proposal. Review the original and correct uncertainties before accepting.\n\n'
+            'Review proposal. Cleanup is limited to recognized spelling fixes; '
+            'classification still needs your review.\n\n'
             f'## Original observation\n\n{fence}text\n{c.raw}\n{fence}\n\n'
             f'Source: [[Quick Capture]], line {c.line} at processing time.\n\n'
             f'## Cleaned observation\n\n{plain(data["cleaned"])}\n\n'
@@ -236,6 +291,8 @@ def apply(root, model=infer):
     staged = {}
     for c in selected:
         data = model(c.raw, catalog)
+        validate(data, catalog)
+        data = preserve_meaning(c.raw, data, catalog)
         validate(data, catalog)
         name = 'Capture-' + c.sha256[:24]
         destination = CAPTURES + '/' + name + '.md'
