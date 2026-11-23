@@ -35,3 +35,4 @@ But you wanna do palm foot to palm foot or the foot of your palm to the foot of 
 
 
 Today I got fucked up I kept getting Doris but my door defense was a lot better I had a I kept doing the belly down back towards the Matt to defend and most people stopped at that and then
+Today I went and I hit a society and the society was nice I noticed that I'm having issues whenever I'm starting from standing and my opponents hips are closer to my hips
