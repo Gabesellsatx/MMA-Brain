@@ -73,6 +73,13 @@ def labelled(raw):
     return out
 
 
+def empty_record(name):
+    r = {f: '' for f in FIELDS}
+    r.update({'Skill': name, 'Context': 'unknown', 'Issue status': 'unknown',
+              'Understanding': 'unknown', 'Safety': 'unknown', 'Exclude': 'no', 'Self assessment': 'Unknown'})
+    return r
+
+
 def validate(record, today):
     if not record['Skill'].strip() or len(record['Skill']) > 120 or re.search(r'[\[\]|\n\r]', record['Skill']):
         raise ValueError('Invalid skill name')
@@ -115,15 +122,18 @@ def extract(root, today):
             raise ValueError('Original capture does not match ledger fingerprint')
         unclear = bool(re.search(r'^kind: needs_context$', text, re.M))
         named = [] if unclear else skills(raw, catalog)
-        fields = labelled(raw) if not unclear else {}
+        raw_warning = ''
+        try:
+            fields = labelled(raw) if not unclear else {}
+        except ValueError as error:
+            fields = {}
+            raw_warning = str(error)
         if fields.get('Skill'):
             named = [fields['Skill']]
         if not named:
             unassigned.append(entry['destination'])
         for name in named:
-            r = {f: '' for f in FIELDS}
-            r.update({'Skill': name, 'Context': 'unknown', 'Issue status': 'unknown',
-                      'Understanding': 'unknown', 'Safety': 'unknown', 'Exclude': 'no', 'Self assessment': 'Unknown'})
+            r = empty_record(name)
             # One capture naming multiple skills cannot assign attempts/causes to any one.
             if len(named) == 1:
                 r.update(fields)
@@ -152,6 +162,21 @@ def extract(root, today):
                         r['Problem'] = ' '.join(difficulties)[:2000]
             if re.search(r'\b(pain|painful|hurt|hurts|injur\w*)\b|\bknee\b.{0,100}\bmesses up\b', raw, re.I):
                 r['Safety'] = 'concern'
+            try:
+                validate(r, today)
+            except ValueError as error:
+                raw_warning = str(error)
+            if raw_warning:
+                # An invalid source fact must remain correctable without changing its source.
+                safety = r['Safety'] if r['Safety'] == 'concern' else 'unknown'
+                r = empty_record(name)
+                r['Safety'] = safety
+                try:
+                    validate(r, today)
+                except ValueError:
+                    unassigned.append(entry['destination'])
+                    continue
+                r['raw_warning'] = raw_warning
             r.update(id=entry['sha256'] + ':' + key(name), source=entry['destination'], raw=raw,
                      shared=len(named) > 1, corrections=[])
             validate(r, today)
@@ -273,6 +298,8 @@ def profile(name, records, catalog, today):
                   'Safety flag: ' + r['Safety'] + '. Self assessment: ' + r['Self assessment'] + ' (user supplied, separate from computed stage).',
                   '', '> ' + esc(r['raw']).rstrip().replace('<br>', '\n> '), '',
                   'To correct this evidence, append a block to ' + link(CORRECTIONS) + ' using this exact Evidence ID.']
+        if r.get('raw_warning'):
+            lines += ['Source validation: ' + esc(r['raw_warning']) + '. Automatically extracted facts were left unknown. Corrections below apply to those unknown values.']
         for correction in r['corrections']:
             lines += ['- Correction ' + str(correction['number']) + ': ' + esc(correction['reason'])]
             lines += ['  - ' + f + ': ' + esc(v['before'] or '(unknown)') + ' → ' + esc(v['after'] or '(unknown)') for f,v in correction['changes'].items()]

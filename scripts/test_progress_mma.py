@@ -31,7 +31,11 @@ class ProgressTests(unittest.TestCase):
         ledger=m.read_ledger(self.root)
         ledger['processed'].append(dict(sha256=c.sha256,source=m.INBOX,destination=dst))
         self.put(m.LEDGER,json.dumps(ledger))
-        return c.sha256+':'+p.key(p.skills(raw,catalog)[0] if not p.labelled(raw).get('Skill') else p.labelled(raw)['Skill']) if kind!='needs_context' else c.sha256
+        try:
+            fields=p.labelled(raw)
+        except ValueError:
+            fields={}
+        return c.sha256+':'+p.key(fields.get('Skill') or p.skills(raw,catalog)[0]) if kind!='needs_context' else c.sha256
     def records(self):
         return p.correct(self.root,p.extract(self.root,TODAY)[0],TODAY)
     def correction(self,evidence,fields):
@@ -78,9 +82,34 @@ class ProgressTests(unittest.TestCase):
         before=self.snapshot()
         with self.assertRaises(ValueError):p.apply(self.root,TODAY)
         self.assertEqual(before,self.snapshot())
-    def test_future_date_rejected(self):
-        self.capture('Date: 2027-01-01; Skill: Knee Cut')
-        with self.assertRaises(ValueError):self.records()
+    def test_future_source_date_stays_unknown_and_correctable(self):
+        eid=self.capture('Date: 2027-01-01; Skill: Knee Cut')
+        before=self.snapshot()
+        self.assertEqual(self.records()[0]['Date'],'')
+        self.assertIn('future',self.records()[0]['raw_warning'])
+        p.apply(self.root,TODAY)
+        self.correction(eid,'Date: 2026-11-20')
+        p.apply(self.root,TODAY)
+        self.assertEqual(self.records()[0]['Date'],'2026-11-20')
+        for path,content in before.items():self.assertEqual((self.root/path).read_bytes(),content)
+    def test_future_correction_date_rejected(self):
+        eid=self.capture('Knee Cut');self.correction(eid,'Date: 2027-01-01')
+        before=self.snapshot()
+        with self.assertRaises(ValueError):p.apply(self.root,TODAY)
+        self.assertEqual(before,self.snapshot())
+    def test_invalid_source_counts_stay_unknown_and_correctable(self):
+        eid=self.capture('Date: 2026-11-20; Skill: Knee Cut; Context: live; Attempts: 3; Successes: 8')
+        r=self.records()[0];self.assertEqual(r['Attempts'],'')
+        self.assertEqual(p.assessment([r],TODAY)['stage'],'Unknown')
+        p.apply(self.root,TODAY)
+        self.correction(eid,'Date: 2026-11-20\nContext: live\nAttempts: 8\nSuccesses: 3')
+        p.apply(self.root,TODAY)
+        self.assertEqual(p.assessment(self.records(),TODAY)['stage'],'Developing')
+    def test_duplicate_source_fields_stay_unknown(self):
+        self.capture('Knee Cut; Date: 2026-11-20; Date: 2026-11-21')
+        r=self.records()[0];self.assertEqual(r['Date'],'')
+        self.assertIn('Duplicate',r['raw_warning'])
+        p.apply(self.root,TODAY)
     def test_missing_correction_id_rejected(self):
         self.capture('Knee Cut');self.correction('missing','Exclude: yes')
         with self.assertRaises(ValueError):p.apply(self.root,TODAY)
