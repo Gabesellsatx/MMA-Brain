@@ -16,6 +16,8 @@ Use ISO dates. Do not submit placeholders or approximate counts as exact numbers
 
 A skill must be explicitly named or supplied through the Skill field. Ambiguous body-part words do not silently become techniques. Unrecognized captures appear in Needs context. The current organizer reads Quick Capture; other session-note folders are not automatically ingested.
 
+If a capture contains invalid facts, such as a future date, impossible counts, or duplicate labels, its extracted facts stay unknown and its report explains the problem. Correct the evidence through Evidence Corrections; the original remains unchanged. Invalid correction blocks stop refresh until you fix the block.
+
 ## Observe → Diagnose → Correct → Retest → Retain
 
 - Observe: verbatim source plus your reported problem and outcome.
