@@ -39,3 +39,5 @@ Today I went and I hit a society and the society was nice I noticed that I'm hav
 
 https://www.facebook.com/share/r/1H6xh6Lnba/?mibextid=wwXIfr
 Armbar vid 
+
+I went to Jiu Jitsu on Sunday I believe it was 11 I was November 22 so I was practicing with Nick who is the brown belts and he has really good transitions I was able to beat them a lot of the times whenever it came to hip height and doing a lot of the judo throws but I noticed that I keep giving up the dark position too easily my arms always get extended my posture always ends up getting broken down so whenever I'm fighting I'm pretty good but as soon as as soon as like someone makes me do a four point or I'm I'm on both knees and hands then a lot of the times of sneak in a doors and I can fight it I just don't want to because it hurts and I didn't have mouthguard so I noticed that I noticed my transitions are getting a little bit better I'm able to chain Russell a little bit better so for example I went into a lot drop and that didn't work and I saw building hip height and turned to Uchi Mata all right Send
