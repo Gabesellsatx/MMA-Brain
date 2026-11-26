@@ -7,9 +7,3 @@ Review proposals; original observations are preserved. Classification still need
 - [[Capture-7b59542da90f32314d4ac1f0|Needs context]] — Unclear; needs_context; needs review
 
 - [[Capture-585688e1a956aeea7cff1907|Single Leg X]] — Brazilian Jiu-Jitsu; problem; needs review
-
-- [[Capture-a69d875211360dfbc815a357|Kuzushi]] — Judo; observation; needs review
-
-- [[Capture-2adbe900838ff80672cbe0d5|D'Arce Choke / Full Nelson / Quarter Nelson]] — Unclear; observation; needs review
-
-- [[Capture-825c7925ed00840610630f00|Entries / Heel Hook / X Guard]] — Brazilian Jiu-Jitsu; observation; needs review
