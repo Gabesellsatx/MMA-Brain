@@ -1,11 +1,15 @@
 name: MMA Brain — organize captures
 on:
   pull_request:
-    paths: ['scripts/**', '.github/workflows/mma-brain.yml', 'MMA Brain/08 Progress/**']
+    paths: ['scripts/**', '.github/workflows/mma-brain.yml', 'MMA Brain/08 Progress/**', 'MMA Brain/11 Glossary/**']
   workflow_dispatch:
     inputs:
       validate_only:
         description: 'Test synthetic captures without proposing real notes'
+        type: boolean
+        default: false
+      use_model:
+        description: 'Optional AI classification and live-model test (slow)'
         type: boolean
         default: false
       retry_closed_proposal:
@@ -39,6 +43,7 @@ jobs:
         run: |
           python scripts/test_organize_mma.py
           python scripts/test_progress_mma.py
+          python scripts/test_glossary_mma.py
       - name: Select validation or processing; wait for human review
         id: gate
         env:
@@ -70,17 +75,21 @@ jobs:
         id: plan
         run: python scripts/organize_mma.py plan
       - name: Install verified local model runtime
-        if: steps.gate.outputs.mode == 'validate' || (steps.gate.outputs.mode == 'organize' && steps.plan.outputs.count != '0')
+        if: inputs.use_model == true && (steps.gate.outputs.mode == 'validate' || (steps.gate.outputs.mode == 'organize' && steps.plan.outputs.count != '0'))
         run: bash scripts/install_mma_model.sh
       - name: Test real model on three synthetic captures
-        if: steps.gate.outputs.mode == 'validate' || (steps.gate.outputs.mode == 'organize' && steps.plan.outputs.count != '0')
+        if: inputs.use_model == true && (steps.gate.outputs.mode == 'validate' || (steps.gate.outputs.mode == 'organize' && steps.plan.outputs.count != '0'))
         run: python scripts/test_organize_mma.py --live
       - name: Propose up to three real captures and verify preservation
         if: steps.gate.outputs.mode == 'organize' && steps.plan.outputs.count != '0'
         id: apply
+        env:
+          USE_MODEL: ${{ inputs.use_model }}
         shell: bash
         run: |
-          python scripts/organize_mma.py apply > "$RUNNER_TEMP/mma-result.json"
+          args=(--local)
+          if [[ "$USE_MODEL" == true ]]; then args=(); fi
+          python scripts/organize_mma.py apply "${args[@]}" > "$RUNNER_TEMP/mma-result.json"
           python - <<'PY'
           import json, os, subprocess
           from pathlib import Path
@@ -126,6 +135,6 @@ jobs:
           COUNT: ${{ steps.plan.outputs.count }}
           PR_URL: ${{ steps.proposal.outputs.pull-request-url }}
         run: |
-          if [[ "$MODE" == validate ]]; then echo 'PASS: integrity tests and real-model synthetic validation. No real captures processed.' >> "$GITHUB_STEP_SUMMARY"; fi
+          if [[ "$MODE" == validate ]]; then echo 'PASS: integrity tests; optional model validation runs only when selected. No real captures processed.' >> "$GITHUB_STEP_SUMMARY"; fi
           if [[ "$MODE" == organize && "$COUNT" == 0 ]]; then echo 'No new captures.' >> "$GITHUB_STEP_SUMMARY"; fi
           if [[ -n "$PR_URL" ]]; then echo "Draft proposal: $PR_URL" >> "$GITHUB_STEP_SUMMARY"; fi
