@@ -25,3 +25,7 @@ Generated practice notes retain the original capture, a proposed cleaned version
 Invalid model output, unsafe paths, collisions, oversized captures, malformed ledgers or source edits during processing stop publication. All responses in a batch are validated before files are written. The workflow independently checks original-file preservation, ledger history, output paths and the three-capture limit before opening a PR.
 
 The synthetic live test checks two martial arts dictations and an instruction-injection example. Regression tests also cover absent technique notes, Single Leg X versus Single Leg, invented symptom descriptions, source uncertainty, and ambiguous body-part titles such as Knee and Elbow (which are not automatically linked to strikes). Whitespace at the edges of cleaned text may be trimmed; originals are still verbatim. This is not a guarantee of classification accuracy; human review remains essential.
+
+## Living progress reports
+
+Open [[08 Progress/Generated/Training Dashboard|What should I train next?]] or [[08 Progress/Generated/Training Progress.canvas|Training Progress canvas]]. The organizer now proposes evidence-based skill reports and map updates alongside each capture batch. [[08 Progress/Progress Guide|Progress Guide]] explains the rubric and voice format; [[08 Progress/Evidence Corrections|Evidence Corrections]] lets you correct facts and assessments without changing original dictation. Corrections-only updates can run even with no new captures; the same human-review gate applies.

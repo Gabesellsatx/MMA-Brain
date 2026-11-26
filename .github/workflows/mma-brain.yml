@@ -1,7 +1,7 @@
 name: MMA Brain — organize captures
 on:
   pull_request:
-    paths: ['scripts/**', '.github/workflows/mma-brain.yml']
+    paths: ['scripts/**', '.github/workflows/mma-brain.yml', 'MMA Brain/08 Progress/**']
   workflow_dispatch:
     inputs:
       validate_only:
@@ -36,7 +36,9 @@ jobs:
         with:
           python-version: '3.12'
       - name: Run integrity tests
-        run: python scripts/test_organize_mma.py
+        run: |
+          python scripts/test_organize_mma.py
+          python scripts/test_progress_mma.py
       - name: Select validation or processing; wait for human review
         id: gate
         env:
@@ -61,6 +63,8 @@ jobs:
               with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
                   f.write('Waiting for review of ' + prs[0]['url'] + '. No captures processed.\n')
           PY
+      - name: Validate progress inputs without changing files
+        run: python scripts/progress_mma.py --check
       - name: Count unprocessed captures
         if: steps.gate.outputs.mode == 'organize'
         id: plan
@@ -89,8 +93,12 @@ jobs:
               f.write(f"Proposed {result['processed']} captures; {result['remaining']} remain. Originals preserved.\n\nInbox SHA-256: `{result['inbox_sha256']}`\n")
           print(json.dumps(result, indent=2))
           PY
+      - name: Update evidence reports and living progress map
+        if: steps.gate.outputs.mode == 'organize'
+        id: progress
+        run: python scripts/progress_mma.py
       - name: Open draft for human review
-        if: steps.apply.outputs.count != ''
+        if: steps.apply.outputs.count != '' || steps.progress.outputs.changed == 'true'
         id: proposal
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
@@ -105,11 +113,13 @@ jobs:
             Proposes at most three new captures. Original notes remain byte-for-byte unchanged.
             Each practice note includes the verbatim capture, proposed cleanup, links to existing notes, and questions.
             Includes the processing ledger and capture index. Review each proposal against its original before merging.
+            Progress reports and the generated canvas use explicit evidence and your corrections; undated observations stay undated.
             No automatic merge. Further processing waits while this PR is open; closing without merging pauses retries.
           add-paths: |
             MMA Brain/05 Practice/Captures/*.md
             MMA Brain/05 Practice/Capture Index.md
             MMA Brain/00 Inbox/Processing Ledger.json
+            MMA Brain/08 Progress/Generated/**
       - name: Report outcome
         env:
           MODE: ${{ steps.gate.outputs.mode }}

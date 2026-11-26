@@ -1,0 +1,47 @@
+{
+  "nodes": [
+    {
+      "id": "dashboard",
+      "type": "file",
+      "file": "08 Progress/Generated/Training Dashboard.md",
+      "x": 0,
+      "y": 0,
+      "width": 560,
+      "height": 360
+    },
+    {
+      "id": "skill-46ff63e823333352",
+      "type": "file",
+      "file": "08 Progress/Generated/Skills/46ff63e823333352.md",
+      "x": 0,
+      "y": 460,
+      "width": 560,
+      "height": 360,
+      "color": "1"
+    },
+    {
+      "id": "skill-397308bb1278503b",
+      "type": "file",
+      "file": "08 Progress/Generated/Skills/397308bb1278503b.md",
+      "x": 600,
+      "y": 460,
+      "width": 560,
+      "height": 360,
+      "color": "1"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-46ff63e823333352",
+      "fromNode": "dashboard",
+      "toNode": "skill-46ff63e823333352",
+      "label": "Review safety concern"
+    },
+    {
+      "id": "edge-397308bb1278503b",
+      "fromNode": "dashboard",
+      "toNode": "skill-397308bb1278503b",
+      "label": "Review safety concern"
+    }
+  ]
+}
