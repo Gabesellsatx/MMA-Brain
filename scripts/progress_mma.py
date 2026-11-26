@@ -45,12 +45,12 @@ def link(path, label=None):
 
 
 def skills(raw, catalog):
-    names = {Path(p).name for p in catalog.values() if Path(p).name.casefold() not in m.AMBIGUOUS_NOTE_TITLES} | SPECIAL
-    text = norm(raw)
-    matches = [(x.start(), x.end(), name) for name in sorted(names) for x in
-               re.finditer(r'(?<!\w)' + re.escape(norm(name)) + r'(?!\w)', text)]
-    return list(dict.fromkeys(x[2] for x in sorted(matches) if not any(
-        y[0] <= x[0] and x[1] <= y[1] and y[1]-y[0] > x[1]-x[0] for y in matches)))
+    # Shared canonical names prevent aliases from creating separate skill reports.
+    base = m.recognized(raw, catalog)
+    for name in sorted(SPECIAL):
+        if re.search(r'(?<!\w)' + re.escape(norm(name)) + r'(?!\w)', norm(raw)):
+            base.append(name)
+    return list(dict.fromkeys(base))
 
 
 def original(text):
@@ -273,6 +273,8 @@ def profile(name, records, catalog, today):
              '', 'Last dated practice: ' + (a['latest'] or 'Unknown') + '. Undated observations are listed separately and never ordered as sessions.',
              '', '## What do I know?', 'Existing knowledge notes:']
     matches = [p for p in catalog.values() if norm(Path(p).name) == norm(name)]
+    if any(e['name'] == m.glossary.canonical(name) for e in m.glossary.ENTRIES):
+        matches.append('11 Glossary/Master Glossary#' + m.glossary.canonical(name))
     lines += ['- ' + link(p) for p in matches] or ['- No exact knowledge-note match. Confirm the name; no substitute technique was linked.']
     lines += ['', '## What can I execute?', '| Dimension | Evidence |', '|---|---|']
     lines += [f'| {dim} | {"Threshold met" if yes else "Not established"} |' for dim, yes in a['dimensions'].items()]
@@ -318,8 +320,9 @@ def build(root, today):
         if r['Exclude'] == 'yes':
             excluded.append(r)
         else:
-            normalized = norm(r['Skill'])
-            canonical.setdefault(normalized, r['Skill'])
+            canonical_name = m.glossary.canonical(r['Skill'])
+            normalized = norm(canonical_name)
+            canonical.setdefault(normalized, canonical_name)
             groups[canonical[normalized]].append(r)
     outputs, summaries = {}, []
     for name in sorted(groups):

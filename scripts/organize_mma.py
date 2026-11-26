@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Propose at most three captures for human review; never edit source notes."""
 import argparse
+import glossary_mma as glossary
 import hashlib
 import html
 import json
@@ -20,7 +21,7 @@ CAPTURES = 'MMA Brain/05 Practice/Captures'
 INDEX = 'MMA Brain/05 Practice/Capture Index.md'
 MODEL = 'qwen3.5:4b'
 ARTS = ['Brazilian Jiu-Jitsu', 'Wrestling', 'Judo', 'Boxing', 'Muay Thai',
-        'Kickboxing', 'MMA', 'Strength and Conditioning', 'Mobility', 'Unclear']
+        'Kickboxing', 'MMA', 'Strength and Conditioning', 'Mobility', 'Physical Therapy', 'Unclear']
 KINDS = ['observation', 'problem', 'drill', 'question', 'needs_context']
 SCHEMA = {'type': 'object', 'additionalProperties': False, 'properties': {
     'title': {'type': 'string'}, 'art': {'type': 'string', 'enum': ARTS},
@@ -232,6 +233,29 @@ def copyedit(raw):
     return raw.strip()
 
 
+def recognized(raw, catalog):
+    text = glossary.norm(copyedit(raw))
+    names = {Path(p).name for p in catalog.values()
+             if Path(p).name.casefold() not in AMBIGUOUS_NOTE_TITLES} | set(PROTECTED_TERMS)
+    return glossary.mentions(copyedit(raw), names)
+
+
+def classify_local(raw, catalog):
+    """No model required. Unknown classifications remain explicit review items."""
+    names = recognized(raw, catalog)
+    arts = {e['art'] for e in glossary.ENTRIES if e['name'] in names}
+    explicit = re.search(r'(?:^|[;\n])\s*Art:\s*([^;\n]+)', raw, re.I)
+    art = next(iter(arts)) if len(arts) == 1 else 'Unclear'
+    if explicit and explicit[1].strip() in ARTS:
+        art = explicit[1].strip()
+    kind = 'observation' if names else 'needs_context'
+    if kind == 'needs_context':
+        art = 'Unclear'
+    elif re.search(r"\b(?:struggling|failed|difficulty|pain|hurt|hurts)\b", raw, re.I):
+        kind = 'problem'
+    return dict(title='Practice capture', art=art, kind=kind, cleaned=raw.strip(), related=[], questions=[])
+
+
 def preserve_meaning(raw, data, catalog):
     """Keep model classification, but derive displayed claims from the source.
 
@@ -253,14 +277,15 @@ def preserve_meaning(raw, data, catalog):
     longest = [m for m in matches if not any(
         n[0] <= m[0] and m[1] <= n[1] and n[1] - n[0] > m[1] - m[0]
         for n in matches)]
-    mentioned = list(dict.fromkeys(m[2] for m in sorted(longest)))
+    mentioned = recognized(raw, catalog)
     unclear = data['kind'] == 'needs_context'
     related = [] if unclear else [i for i, path in catalog.items()
                                  if Path(path).name in mentioned][:6]
-    missing = [name for name in mentioned if name not in {Path(p).name for p in catalog.values()}]
+    missing = [name for name in mentioned if name not in {Path(p).name for p in catalog.values()} and name in PROTECTED_TERMS]
     questions = (['What training observation did you intend to record?'] if unclear else
                  [f'No existing note matches {name}; confirm the technique name before adding a link.'
                   for name in missing[:3]])
+    questions = (questions + glossary.questions(raw))[:3]
     title = 'Needs context' if unclear else (' / '.join(mentioned)[:120] or 'Practice capture')
     return dict(data, title=title, cleaned=cleaned, related=related, questions=questions)
 
@@ -268,6 +293,9 @@ def preserve_meaning(raw, data, catalog):
 def render(c, data, catalog):
     fence = '`' * max(3, 1 + max([len(x) for x in re.findall(r'`+', c.raw)] or [0]))
     links = '\n'.join('- [[' + catalog[i] + '|' + Path(catalog[i]).name + ']]' for i in data['related']) or '- No confident match; review context.'
+    glossary_links = [glossary.link(n) for n in glossary.mentions(copyedit(c.raw))] if data['kind'] != 'needs_context' else []
+    if glossary_links:
+        links += '\n' + '\n'.join('- ' + x for x in glossary_links)
     questions = '\n'.join('- ' + plain(q) for q in data['questions']) or '- Confirm the cleaned text preserves your intended meaning.'
     return (f'---\ntype: practice-capture\nstatus: needs-review\nart: {json.dumps(data["art"])}\n'
             f'kind: {data["kind"]}\nsource_sha256: {c.sha256}\n---\n\n# {plain(data["title"])}\n\n'
@@ -301,7 +329,7 @@ def apply(root, model=infer):
         staged[destination] = render(c, data, catalog).encode()
         index += f'\n- [[{name}|{plain(data["title"])}]] — {data["art"]}; {data["kind"]}; needs review\n'
         ledger['processed'].append({'sha256': c.sha256, 'source': INBOX, 'source_line': c.line,
-            'destination': destination, 'status': 'proposed_for_review', 'model': MODEL,
+            'destination': destination, 'status': 'proposed_for_review', 'model': 'terminology-v1' if model is classify_local else MODEL,
             'processed_at': datetime.now(timezone.utc).isoformat()})
     ledger['schema_version'] = 2
     staged[LEDGER] = (json.dumps(ledger, indent=2, ensure_ascii=False) + '\n').encode()
@@ -327,12 +355,12 @@ def apply(root, model=infer):
     return result
 
 
-def verified_apply(root):
+def verified_apply(root, model=None):
     """Enforce the publish boundary independently of model behavior."""
     root = Path(root).resolve()
     before = {p.relative_to(root).as_posix(): p.read_bytes() for p in (root / 'MMA Brain').rglob('*') if p.is_file()}
     old_records = read_ledger(root)['processed']
-    result = apply(root)
+    result = apply(root) if model is None else apply(root, model=model)
     for name, data in before.items():
         if name not in (LEDGER, INDEX) and safe_path(root, name).read_bytes() != data:
             raise ValueError('Original file changed')
@@ -353,12 +381,13 @@ def verified_apply(root):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('mode', choices=['plan', 'apply'])
+    parser.add_argument('--local', action='store_true', help='Use conservative terminology classification without an AI model')
     args = parser.parse_args()
     if args.mode == 'plan':
         raw, _, pending, selected = plan(ROOT)
         result = {'pending': len(pending), 'selected': len(selected), 'inbox_sha256': digest(raw)}
     else:
-        result = verified_apply(ROOT)
+        result = verified_apply(ROOT, model=classify_local if args.local else infer)
     print(json.dumps(result, indent=2))
     if os.environ.get('GITHUB_OUTPUT'):
         with open(os.environ['GITHUB_OUTPUT'], 'a') as stream:
